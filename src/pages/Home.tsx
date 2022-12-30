@@ -1,5 +1,11 @@
+import Sidebar from "../components/Sidebar/Sidebar";
+
 const Home: React.FC = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <Sidebar />
+    </div>
+  );
 };
 
 export default Home;

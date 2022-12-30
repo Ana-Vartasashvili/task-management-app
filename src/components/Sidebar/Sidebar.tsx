@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
-import CalendarIcon from "../../icons/CalendarIcon";
-import ClipboardIcon from "../../icons/ClipboardIcon";
-import SunIcon from "../../icons/SunIcon";
-import SidebarItem from "../Sidebar/SidebarItem";
+import { Link } from 'react-router-dom'
+import CalendarIcon from '../../icons/CalendarIcon'
+import ClipboardIcon from '../../icons/ClipboardIcon'
+import SunIcon from '../../icons/SunIcon'
+import SidebarItem from '../Sidebar/SidebarItem'
 
 const Sidebar: React.FC = () => {
   return (
-    <div className="w-2/12 h-screen fixed bg-darkBlue px-10 ">
+    <div className="w-120 h-screen fixed bg-darkBlue px-10 ">
       <ul className="mt-40 flex flex-col gap-20 text-2xl">
         <li>
           <Link to="/">
@@ -36,7 +36,7 @@ const Sidebar: React.FC = () => {
         </li>
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

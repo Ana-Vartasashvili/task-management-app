@@ -1,11 +1,8 @@
-import Sidebar from "../components/Sidebar/Sidebar";
+import Sidebar from '../components/Sidebar/Sidebar'
+import Card from '../components/Sidebar/card/Card'
 
 const Home: React.FC = () => {
-  return (
-    <div>
-      <Sidebar />
-    </div>
-  );
-};
+  return <Card></Card>
+}
 
-export default Home;
+export default Home

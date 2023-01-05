@@ -1,7 +1,8 @@
-import React from "react";
+import React from 'react'
+import Card from '../components/Sidebar/card/Card'
 
 const AllTasks: React.FC = () => {
-  return <div>AllTasks</div>;
-};
+  return <Card></Card>
+}
 
-export default AllTasks;
+export default AllTasks

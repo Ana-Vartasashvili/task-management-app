@@ -1,8 +1,12 @@
-import Sidebar from '../components/Sidebar/Sidebar'
 import Card from '../components/Sidebar/card/Card'
+import AddTask from '../components/Task/AddTask'
 
 const Home: React.FC = () => {
-  return <Card></Card>
+  return (
+    <Card>
+      <AddTask />
+    </Card>
+  )
 }
 
 export default Home

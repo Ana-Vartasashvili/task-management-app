@@ -1,5 +1,7 @@
-const WeekTasks: React.FC = () => {
-  return <div>WeekTasks</div>;
-};
+import Card from '../components/Sidebar/card/Card'
 
-export default WeekTasks;
+const WeekTasks: React.FC = () => {
+  return <Card></Card>
+}
+
+export default WeekTasks

@@ -8,8 +8,13 @@ module.exports = {
     },
 
     colors: {
-      darkBlue: '#0D0023',
-      lightPurple: '#B0A6CA',
+      darkBlue: '#111621',
+      lightBlue: '#4590F9',
+      textColor_darkGray: '#44403c',
+      gray: '#9398A7',
+      white: '#FFFFFF',
+      textColor_lightGray: '#e3e3e3',
+      buttonGray: '#f8fafc',
     },
 
     fontSize: {

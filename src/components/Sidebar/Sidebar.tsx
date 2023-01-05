@@ -6,7 +6,7 @@ import SidebarItem from '../Sidebar/SidebarItem'
 
 const Sidebar: React.FC = () => {
   return (
-    <div className="w-120 h-screen fixed bg-darkBlue px-10 ">
+    <div className="w-120 h-screen absolute top-0 left-0 text-white bg-darkBlue px-10 ">
       <ul className="mt-40 flex flex-col gap-20 text-2xl">
         <li>
           <Link to="/">

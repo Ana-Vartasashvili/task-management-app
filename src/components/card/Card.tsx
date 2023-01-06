@@ -1,4 +1,4 @@
-import Sidebar from '../Sidebar'
+import Sidebar from '../Sidebar/Sidebar'
 
 const Card: React.FC<{ children: React.ReactNode }> = (props) => {
   return (

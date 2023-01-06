@@ -1,20 +1,20 @@
-const PlusIcon = () => {
+const CheckCircleIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
-      stroke="#4590F9"
-      className="w-8 h-8"
+      stroke="currentColor"
+      className="w-9 h-9"
     >
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M12 4.5v15m7.5-7.5h-15"
+        d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
       />
     </svg>
   )
 }
 
-export default PlusIcon
+export default CheckCircleIcon

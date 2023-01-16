@@ -3,7 +3,9 @@ import TaskListItem from './TaskListItem'
 const TasksList: React.FC<{
   tasksData: {
     name: string
+    id: number
   }[]
+  onDeleteTask: (id: number) => void
 }> = (props) => {
   const tasks = props.tasksData
 
@@ -12,9 +14,12 @@ const TasksList: React.FC<{
       <ul className="flex flex-col gap-6">
         {tasks.map((task) => {
           return (
-            <li>
-              <TaskListItem name={task.name} />
-            </li>
+            <TaskListItem
+              key={task.id}
+              name={task.name}
+              id={task.id}
+              onDeleteTask={props.onDeleteTask}
+            />
           )
         })}
       </ul>

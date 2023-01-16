@@ -5,6 +5,9 @@ import DeleteIcon from '../../icons/DeleteIcon'
 
 const TaskListItem: React.FC<{
   name: string
+  id: number
+  key: number
+  onDeleteTask: (id: number) => void
 }> = (props) => {
   const [taskIsDone, setTaskIsDone] = useState(false)
 
@@ -21,7 +24,7 @@ const TaskListItem: React.FC<{
         <span>{props.name}</span>
       </div>
 
-      <button>
+      <button onClick={() => props.onDeleteTask(props.id)}>
         <DeleteIcon />
       </button>
     </li>

@@ -3,7 +3,9 @@ import CheckCircleIcon from '../../icons/CheckCircleIcon'
 import CheckCircleSolidIcon from '../../icons/CheckCircleSolidIcon'
 import DeleteIcon from '../../icons/DeleteIcon'
 
-const TaskListItem: React.FC = () => {
+const TaskListItem: React.FC<{
+  name: string
+}> = (props) => {
   const [taskIsDone, setTaskIsDone] = useState(false)
 
   const markTaskAsDone = () => {
@@ -16,7 +18,7 @@ const TaskListItem: React.FC = () => {
         <button onClick={markTaskAsDone}>
           {taskIsDone ? <CheckCircleSolidIcon /> : <CheckCircleIcon />}
         </button>
-        <span>Create a new project</span>
+        <span>{props.name}</span>
       </div>
 
       <button>

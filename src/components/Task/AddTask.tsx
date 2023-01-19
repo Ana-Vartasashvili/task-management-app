@@ -1,12 +1,18 @@
 import { useState } from 'react'
 import PlusIcon from '../../icons/PlusIcon'
+import { AddTaskProps } from './types'
 
-const AddTask: React.FC = () => {
+const AddTask: React.FC<AddTaskProps> = (props) => {
   const [formIsShown, setFormIsShown] = useState(false)
   const [currentInputValue, setCurrentInputValue] = useState('')
 
   const toggleAddTaskForm = () => {
     setFormIsShown((prev) => !prev)
+  }
+
+  const addTask = (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault()
+    return props.onAddTask(currentInputValue, new Date().toISOString())
   }
 
   return (
@@ -40,6 +46,7 @@ const AddTask: React.FC = () => {
             </button>
 
             <button
+              onClick={addTask}
               type="submit"
               disabled={!currentInputValue?.length}
               className={`px-5 py-2 rounded-lg bg-lightBlue text-white ${

@@ -1,12 +1,7 @@
 import TaskListItem from './TaskListItem'
+import { TaskListProps } from './types'
 
-const TasksList: React.FC<{
-  tasksData: {
-    name: string
-    id: number
-  }[]
-  onDeleteTask: (id: number) => void
-}> = (props) => {
+const TasksList: React.FC<TaskListProps> = (props) => {
   const tasks = props.tasksData
 
   return (

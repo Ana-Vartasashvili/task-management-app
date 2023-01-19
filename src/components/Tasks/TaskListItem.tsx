@@ -2,13 +2,9 @@ import { useState } from 'react'
 import CheckCircleIcon from '../../icons/CheckCircleIcon'
 import CheckCircleSolidIcon from '../../icons/CheckCircleSolidIcon'
 import DeleteIcon from '../../icons/DeleteIcon'
+import { TaskListItemProps } from './types'
 
-const TaskListItem: React.FC<{
-  name: string
-  id: number
-  key: number
-  onDeleteTask: (id: number) => void
-}> = (props) => {
+const TaskListItem: React.FC<TaskListItemProps> = (props) => {
   const [taskIsDone, setTaskIsDone] = useState(false)
 
   const markTaskAsDone = () => {

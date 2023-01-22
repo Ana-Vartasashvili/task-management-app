@@ -17,6 +17,7 @@ module.exports = {
       textColor_darkGray: '#44403c',
       gray: '#9398A7',
       white: '#FFFFFF',
+      red: '#b91c1c',
 
       textColor_lightGray: '#e3e3e3',
       buttonGray: '#f8fafc',

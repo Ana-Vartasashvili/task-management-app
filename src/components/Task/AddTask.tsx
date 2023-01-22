@@ -12,7 +12,8 @@ const AddTask: React.FC<AddTaskProps> = (props) => {
 
   const addTask = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault()
-    return props.onAddTask(currentInputValue, new Date().toISOString())
+    props.onAddTask(currentInputValue, new Date().toISOString())
+    setCurrentInputValue('')
   }
 
   return (
@@ -32,6 +33,7 @@ const AddTask: React.FC<AddTaskProps> = (props) => {
           <input
             type="text"
             placeholder="Task name"
+            value={currentInputValue}
             onChange={(e) => setCurrentInputValue(e.target.value.trim())}
             className="border-[1.8px] w-2/4 border-solid border-gray rounded-2xl p-4 mx-auto flex justify-center mt-40 hover:border-lightBlue focus:border-lightBlue"
           />

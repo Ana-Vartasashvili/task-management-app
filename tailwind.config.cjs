@@ -8,22 +8,29 @@ module.exports = {
     },
 
     colors: {
+      black: '#000',
       darkBlue: '#111621',
       lightBlue: '#4590F9',
+      lightBlue_hover: '#3b82f6',
+      register_card_color: '#252525',
+      register_card_font_color: '#f8fafc',
       textColor_darkGray: '#44403c',
       gray: '#9398A7',
       white: '#FFFFFF',
+
       textColor_lightGray: '#e3e3e3',
       buttonGray: '#f8fafc',
     },
 
     fontSize: {
-      base: '16px',
-      sm: '12px',
-      md: '14px',
-      lg: '18px',
-      '2xl': '20px',
-      '3xl': '24px',
+      base: '1.6rem',
+      sm: '1.2rem',
+      md: '1.4rem',
+      lg: '1.8rem',
+      '2xl': '2rem',
+      '3xl': '2.4rem',
+      '4xl': '3rem',
+      '5xl': '3.6rem',
     },
 
     extend: {

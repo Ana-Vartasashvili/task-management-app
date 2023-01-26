@@ -5,7 +5,7 @@ const FormInput: React.FC<FormInputProps> = (props) => {
     props
 
   return (
-    <div className="w-full">
+    <div className="w-full h-24">
       <input
         type={type ? type : 'text'}
         id={id}
@@ -21,7 +21,7 @@ const FormInput: React.FC<FormInputProps> = (props) => {
       />
 
       {errors && touched && (
-        <p className="p-0 mt-1 text-[1.3rem] text-red">{errors}</p>
+        <p className="p-0  text-[1.1rem] text-red">{errors}</p>
       )}
     </div>
   )

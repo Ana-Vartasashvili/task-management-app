@@ -1,25 +1,32 @@
-import { useFormik } from 'formik'
+import { useFormik, FormikHelpers } from 'formik'
 import { Link } from 'react-router-dom'
 import { signUpSchema } from '../../schemas/signUpSchema'
 import FormInput from './FormInput'
 import axios from '../../services/axios'
 import { RegisterInputValues } from '../types'
 import { useState } from 'react'
-import { setError } from '../../store/tasksSlice'
-import PopupMessage from '../../components/popup/PopupMessage'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const Register: React.FC = () => {
-  const [error, serError] = useState('')
+  const [error, setError] = useState('')
   const [successMessage, setSuccessMessage] = useState('')
 
-  const onSubmit = async (values: RegisterInputValues) => {
+  const onSubmit = async (values: RegisterInputValues, { resetForm }: any) => {
     try {
       const response = await axios.post('/auth/sign-up', values)
       setSuccessMessage(response.data)
+      resetForm({ values: '' })
     } catch (error: any) {
-      setError(error.response.data)
+      setError(error.response.data.message)
+      notify()
     }
   }
+
+  const notify = () =>
+    toast.error(error, {
+      position: toast.POSITION.TOP_CENTER,
+    })
 
   const {
     values,
@@ -43,8 +50,8 @@ const Register: React.FC = () => {
 
   return (
     <div className="h-screen flex items-center bg-black">
+      <ToastContainer />
       <div className="w-4/6 h-4/5 py-24 mx-auto flex items-center justify-center rounded-[2.5rem] bg-register_card_color">
-        <PopupMessage />
         <div>
           <h1 className="text-5xl font-bold text-center text-register_card_font_color">
             Sign up
@@ -110,7 +117,9 @@ const Register: React.FC = () => {
             <button
               disabled={isSubmitting}
               type="submit"
-              className="w-full bg-lightBlue px-8 py-4 rounded-2xl text-white font-semibold hover:bg-lightBlue_hover hover:transition duration-300 ease-in-out"
+              className={`w-full bg-lightBlue px-8 py-4 rounded-2xl text-white font-semibold hover:bg-lightBlue_hover hover:transition duration-300 ease-in-out ${
+                isSubmitting && 'opacity-30 cursor-not-allowed'
+              }`}
             >
               Sign up
             </button>

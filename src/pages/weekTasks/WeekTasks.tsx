@@ -1,4 +1,4 @@
-import Card from '../components/card/Card'
+import Card from '../../components/card/Card'
 
 const WeekTasks: React.FC = () => {
   return <Card></Card>

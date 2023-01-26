@@ -1,13 +1,13 @@
 import { Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import React from 'react'
-import Home from './pages/Home'
-import WeekTasks from './pages/WeekTasks'
-import AllTasks from './pages/AllTasks'
+import Home from './pages/home/Home'
+import WeekTasks from './pages/weekTasks/WeekTasks'
+import AllTasks from './pages/allTasks/AllTasks'
 import { useDispatch } from 'react-redux'
 import { addTasksData, setError } from './store/tasksSlice'
-import Register from './pages/Register'
-import Login from './pages/Login'
+import Register from './pages/register/Register'
+import Login from './pages/login/Login'
 
 const App: React.FC = () => {
   const todos = [

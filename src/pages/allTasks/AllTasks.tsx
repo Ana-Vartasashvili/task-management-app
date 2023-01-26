@@ -1,8 +1,8 @@
 import React from 'react'
-import Card from '../components/card/Card'
-import ClipboardIcon from '../icons/ClipboardIcon'
-import { Tasks } from '../types/global'
-import TaskListItem from '../components/Tasks/TaskListItem'
+import Card from '../../components/card/Card'
+import ClipboardIcon from '../../icons/ClipboardIcon'
+import { Tasks } from '../../types/global'
+import TaskListItem from '../../components/Tasks/TaskListItem'
 
 const AllTasks: React.FC<{ tasksData: Tasks[] }> = (props) => {
   return (

@@ -2,12 +2,25 @@ import { useFormik } from 'formik'
 import { Link } from 'react-router-dom'
 import { signUpSchema } from '../../schemas/signUpSchema'
 import FormInput from './FormInput'
-
-const onSubmit = () => {
-  console.log('submitted')
-}
+import axios from '../../services/axios'
+import { RegisterInputValues } from '../types'
+import { useState } from 'react'
+import { setError } from '../../store/tasksSlice'
+import PopupMessage from '../../components/popup/PopupMessage'
 
 const Register: React.FC = () => {
+  const [error, serError] = useState('')
+  const [successMessage, setSuccessMessage] = useState('')
+
+  const onSubmit = async (values: RegisterInputValues) => {
+    try {
+      const response = await axios.post('/auth/sign-up', values)
+      setSuccessMessage(response.data)
+    } catch (error: any) {
+      setError(error.response.data)
+    }
+  }
+
   const {
     values,
     errors,
@@ -22,7 +35,7 @@ const Register: React.FC = () => {
       last_name: '',
       email: '',
       password: '',
-      confirm_password: '',
+      password_confirmation: '',
     },
     validationSchema: signUpSchema,
     onSubmit,
@@ -31,6 +44,7 @@ const Register: React.FC = () => {
   return (
     <div className="h-screen flex items-center bg-black">
       <div className="w-4/6 h-4/5 py-24 mx-auto flex items-center justify-center rounded-[2.5rem] bg-register_card_color">
+        <PopupMessage />
         <div>
           <h1 className="text-5xl font-bold text-center text-register_card_font_color">
             Sign up
@@ -62,6 +76,7 @@ const Register: React.FC = () => {
 
             <FormInput
               id="email"
+              type="email"
               placeholder="Email"
               value={values.email}
               errors={errors.email}
@@ -72,6 +87,7 @@ const Register: React.FC = () => {
 
             <FormInput
               id="password"
+              type="password"
               placeholder="Password"
               value={values.password}
               errors={errors.password}
@@ -81,11 +97,12 @@ const Register: React.FC = () => {
             />
 
             <FormInput
-              id="confirm_password"
+              id="password_confirmation"
+              type="password"
               placeholder="Password"
-              value={values.confirm_password}
-              errors={errors.confirm_password}
-              touched={touched.confirm_password}
+              value={values.password_confirmation}
+              errors={errors.password_confirmation}
+              touched={touched.password_confirmation}
               onBlur={handleBlur}
               onChange={handleChange}
             />

@@ -6,7 +6,7 @@ export type HomeProps = {
   onAddTask: (taskName: string, id: string) => void
 }
 
-export type formInputProps = {
+export type FormInputProps = {
   type?: string
   id: string
   placeholder: string
@@ -15,4 +15,12 @@ export type formInputProps = {
   touched?: boolean
   onChange: (e: ChangeEvent<any>) => void
   onBlur: (e: FocusEvent<any, Element>) => void
+}
+
+export type RegisterInputValues = {
+  first_name: string
+  last_name: string
+  email: string
+  password: string
+  password_confirmation: string
 }

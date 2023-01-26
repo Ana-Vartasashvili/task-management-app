@@ -1,6 +1,6 @@
-import { formInputProps } from '../types'
+import { FormInputProps } from '../types'
 
-const FormInput: React.FC<formInputProps> = (props) => {
+const FormInput: React.FC<FormInputProps> = (props) => {
   const { id, placeholder, value, onChange, onBlur, type, errors, touched } =
     props
 

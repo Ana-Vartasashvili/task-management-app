@@ -1,57 +1,10 @@
-import { useFormik } from 'formik'
 import AuthFormCard from '../../components/authForm/AuthFormCard'
 import AuthFormInput from '../../components/authForm/AuthFormInput'
-import { LoginInputValues } from '../types'
-import axios from '../../services/axios'
-import { signInSchema } from '../../schemas/signInSchema'
-import { toast, ToastContainer } from 'react-toastify'
-import { useState } from 'react'
+import { ToastContainer } from 'react-toastify'
+import { useSignIn } from './useSignIn'
 
 const Login: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(false)
-
-  const onSubmit = async (values: LoginInputValues, { setFieldError }: any) => {
-    try {
-      const response = await axios.post('/auth/sign-in', values)
-    } catch (error: any) {
-      const errorMessage = error.response.data.message
-      if (errorMessage) {
-        notify(errorMessage)
-        setFieldError('email', 'Credentials are incorrect')
-        setFieldError('password', 'Credentials are incorrect')
-      }
-    }
-  }
-
-  const notify = (message: string) =>
-    toast.error(message, {
-      position: toast.POSITION.TOP_CENTER,
-    })
-
-  const {
-    values,
-    errors,
-    touched,
-    isSubmitting,
-    handleBlur,
-    handleChange,
-    handleSubmit,
-  } = useFormik({
-    initialValues: {
-      email: '',
-      password: '',
-    },
-    validationSchema: signInSchema,
-    onSubmit,
-  })
-
-  const formikFields = {
-    values,
-    errors,
-    touched,
-    handleBlur,
-    handleChange,
-  }
+  const { handleSubmit, formikFields, isSubmitting } = useSignIn()
 
   return (
     <AuthFormCard>

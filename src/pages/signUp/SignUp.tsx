@@ -5,9 +5,10 @@ import AuthFormInput from '../../components/authForm/AuthFormInput'
 import axios from '../../services/axios'
 import { SignUpInputValues } from '../types'
 import { useState } from 'react'
-import { toast, ToastContainer } from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import AuthFormCard from '../../components/authForm/AuthFormCard'
+import { notify } from '../../helpers/notify'
 
 const SignUp: React.FC = () => {
   const [successMessage, setSuccessMessage] = useState('')
@@ -24,11 +25,6 @@ const SignUp: React.FC = () => {
       }
     }
   }
-
-  const notify = (message: string) =>
-    toast.error(message, {
-      position: toast.POSITION.TOP_CENTER,
-    })
 
   const {
     values,

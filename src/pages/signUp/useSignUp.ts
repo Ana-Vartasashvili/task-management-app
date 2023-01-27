@@ -2,19 +2,22 @@ import { useFormik } from 'formik'
 import { signUpSchema } from '../../schemas/signUpSchema'
 import { notify } from '../../helpers/notify'
 import { SignUpInputValues } from '../types'
-import { useState } from 'react'
 import axios from '../../services/axios'
+import { useNavigate } from 'react-router-dom'
 
 export const useSignUp = () => {
-  const [successMessage, setSuccessMessage] = useState('')
+  const navigate = useNavigate()
 
   const onSubmit = async (values: SignUpInputValues, { resetForm }: any) => {
     try {
       const response = await axios.post('/auth/sign-up', values)
-      setSuccessMessage(response.data)
+      if (response.status === 201) {
+        navigate('/signed-up')
+      }
       resetForm({ values: '' })
     } catch (error: any) {
       const errorMessage = error.response.data.message
+      console.log(error)
       if (errorMessage) {
         notify(errorMessage)
       }

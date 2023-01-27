@@ -1,6 +1,6 @@
-import { FormInputProps } from '../types'
+import { AuthFormInputProps } from '../../pages/types'
 
-const FormInput: React.FC<FormInputProps> = (props) => {
+const AuthFormInput: React.FC<AuthFormInputProps> = (props) => {
   const { id, placeholder, type, formikFields } = props
   const { values, errors, touched, handleBlur, handleChange } = formikFields
 
@@ -25,4 +25,4 @@ const FormInput: React.FC<FormInputProps> = (props) => {
   )
 }
 
-export default FormInput
+export default AuthFormInput

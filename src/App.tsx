@@ -6,8 +6,9 @@ import WeekTasks from './pages/weekTasks/WeekTasks'
 import AllTasks from './pages/allTasks/AllTasks'
 import { useDispatch } from 'react-redux'
 import { addTasksData, setError } from './store/tasksSlice'
-import Register from './pages/register/Register'
-import Login from './pages/login/Login'
+import SignUp from './pages/signUp/SignUp'
+import Login from './pages/signIn/SignIn'
+import SignIn from './pages/signIn/SignIn'
 
 const App: React.FC = () => {
   const todos = [
@@ -83,8 +84,8 @@ const App: React.FC = () => {
       />
       <Route path="/tasks/next-seven-days" element={<WeekTasks />} />
       <Route path="/tasks/all" element={<AllTasks tasksData={tasks} />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/Sign-up" element={<SignUp />} />
+      <Route path="/sign-in" element={<SignIn />} />
     </Routes>
   )
 }

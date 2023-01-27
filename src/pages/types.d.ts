@@ -1,3 +1,4 @@
+import { FormikValues } from 'formik'
 import { Tasks } from '../types/global'
 
 export type HomeProps = {
@@ -10,11 +11,35 @@ export type FormInputProps = {
   type?: string
   id: string
   placeholder: string
-  value: string
-  errors?: string
-  touched?: boolean
-  onChange: (e: ChangeEvent<any>) => void
-  onBlur: (e: FocusEvent<any, Element>) => void
+
+  formikFields: {
+    values: FormikValues<{
+      first_name: string
+      last_name: string
+      email: string
+      password: string
+      password_confirmation: string
+    }>
+
+    errors?: FormikErrors<{
+      first_name: string
+      last_name: string
+      email: string
+      password: string
+      password_confirmation: string
+    }>
+
+    touched?: FormikTouched<{
+      first_name: string
+      last_name: string
+      email: string
+      password: string
+      password_confirmation: string
+    }>
+
+    handleChange: (e: ChangeEvent<any>) => void
+    handleBlur: (e: FocusEvent<any, Element>) => void
+  }
 }
 
 export type RegisterInputValues = {

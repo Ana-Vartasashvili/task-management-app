@@ -48,70 +48,58 @@ const Register: React.FC = () => {
     onSubmit,
   })
 
+  const formikFields = {
+    values,
+    errors,
+    touched,
+    handleBlur,
+    handleChange,
+  }
+
   return (
     <div className="h-screen flex items-center bg-black">
       <ToastContainer />
       <div className="w-4/6 h-4/5 py-24 mx-auto flex items-center justify-center rounded-[2.5rem] bg-register_card_color">
         <div>
-          <h1 className="text-5xl font-bold text-center text-register_card_font_color">
+          <h1 className="text-4xl font-bold text-center text-register_card_font_color">
             Sign up
           </h1>
 
           <form
             onSubmit={handleSubmit}
-            className="mt-10 m-auto flex flex-col items-center w-[32rem]  gap-7"
+            className="mt-7 m-auto flex flex-col items-center w-[32rem]  gap-6"
           >
             <FormInput
               id="first_name"
               placeholder="First name"
-              value={values.first_name}
-              errors={errors.first_name}
-              touched={touched.first_name}
-              onBlur={handleBlur}
-              onChange={handleChange}
+              formikFields={formikFields}
             />
 
             <FormInput
               id="last_name"
               placeholder="Last name"
-              value={values.last_name}
-              errors={errors.last_name}
-              touched={touched.last_name}
-              onBlur={handleBlur}
-              onChange={handleChange}
+              formikFields={formikFields}
             />
 
             <FormInput
               id="email"
               type="email"
               placeholder="Email"
-              value={values.email}
-              errors={errors.email}
-              touched={touched.email}
-              onBlur={handleBlur}
-              onChange={handleChange}
+              formikFields={formikFields}
             />
 
             <FormInput
               id="password"
               type="password"
               placeholder="Password"
-              value={values.password}
-              errors={errors.password}
-              touched={touched.password}
-              onBlur={handleBlur}
-              onChange={handleChange}
+              formikFields={formikFields}
             />
 
             <FormInput
               id="password_confirmation"
               type="password"
               placeholder="Password"
-              value={values.password_confirmation}
-              errors={errors.password_confirmation}
-              touched={touched.password_confirmation}
-              onBlur={handleBlur}
-              onChange={handleChange}
+              formikFields={formikFields}
             />
 
             <button
@@ -125,7 +113,7 @@ const Register: React.FC = () => {
             </button>
           </form>
 
-          <p className="text-center mt-6 ">
+          <p className="text-center mt-5 text-sm">
             Already signed up?{' '}
             <Link to="/login" className="underline">
               Go to login

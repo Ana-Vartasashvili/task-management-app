@@ -9,6 +9,8 @@ import { addTasksData, setError } from './store/tasksSlice'
 import SignUp from './pages/signUp/SignUp'
 import Login from './pages/signIn/SignIn'
 import SignIn from './pages/signIn/SignIn'
+import SignedUpIllustration from './illustrations/SignedUpIllustration'
+import SignedUp from './pages/signedUp/SignedUp'
 
 const App: React.FC = () => {
   const todos = [
@@ -86,6 +88,7 @@ const App: React.FC = () => {
       <Route path="/tasks/all" element={<AllTasks tasksData={tasks} />} />
       <Route path="/Sign-up" element={<SignUp />} />
       <Route path="/sign-in" element={<SignIn />} />
+      <Route path="/signed-up" element={<SignedUp />} />
     </Routes>
   )
 }

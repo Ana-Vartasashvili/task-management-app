@@ -2,6 +2,7 @@ import AuthFormCard from '../../components/authForm/AuthFormCard'
 import AuthFormInput from '../../components/authForm/AuthFormInput'
 import { ToastContainer } from 'react-toastify'
 import { useSignIn } from './useSignIn'
+import { Link } from 'react-router-dom'
 
 const Login: React.FC = () => {
   const { handleSubmit, formikFields, isSubmitting } = useSignIn()
@@ -10,7 +11,7 @@ const Login: React.FC = () => {
     <AuthFormCard>
       <div>
         <h1 className="text-4xl font-bold text-center text-SignUp_card_font_color">
-          Log in
+          Sign in
         </h1>
 
         <ToastContainer />
@@ -42,6 +43,13 @@ const Login: React.FC = () => {
             Sign in
           </button>
         </form>
+
+        <p className="text-center mt-5 text-sm">
+          Don't have an account?{' '}
+          <Link to="/sign-up" className="underline">
+            Sign up
+          </Link>
+        </p>
       </div>
     </AuthFormCard>
   )

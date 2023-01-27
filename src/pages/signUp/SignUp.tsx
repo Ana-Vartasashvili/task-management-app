@@ -66,8 +66,8 @@ const SignUp: React.FC = () => {
 
         <p className="text-center mt-5 text-sm">
           Already signed up?{' '}
-          <Link to="/login" className="underline">
-            Go to login
+          <Link to="/sign-in" className="underline">
+            Sign in
           </Link>
         </p>
       </div>

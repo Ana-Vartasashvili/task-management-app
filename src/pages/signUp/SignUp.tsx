@@ -1,58 +1,12 @@
-import { useFormik } from 'formik'
 import { Link } from 'react-router-dom'
-import { signUpSchema } from '../../schemas/signUpSchema'
 import AuthFormInput from '../../components/authForm/AuthFormInput'
-import axios from '../../services/axios'
-import { SignUpInputValues } from '../types'
-import { useState } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import AuthFormCard from '../../components/authForm/AuthFormCard'
-import { notify } from '../../helpers/notify'
+import { useSignUp } from './useSignUp'
 
 const SignUp: React.FC = () => {
-  const [successMessage, setSuccessMessage] = useState('')
-
-  const onSubmit = async (values: SignUpInputValues, { resetForm }: any) => {
-    try {
-      const response = await axios.post('/auth/sign-up', values)
-      setSuccessMessage(response.data)
-      resetForm({ values: '' })
-    } catch (error: any) {
-      const errorMessage = error.response.data.message
-      if (errorMessage) {
-        notify(errorMessage)
-      }
-    }
-  }
-
-  const {
-    values,
-    errors,
-    touched,
-    isSubmitting,
-    handleBlur,
-    handleChange,
-    handleSubmit,
-  } = useFormik({
-    initialValues: {
-      first_name: '',
-      last_name: '',
-      email: '',
-      password: '',
-      password_confirmation: '',
-    },
-    validationSchema: signUpSchema,
-    onSubmit,
-  })
-
-  const formikFields = {
-    values,
-    errors,
-    touched,
-    handleBlur,
-    handleChange,
-  }
+  const { handleSubmit, formikFields, isSubmitting } = useSignUp()
 
   return (
     <AuthFormCard>

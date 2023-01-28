@@ -4,13 +4,10 @@ import React from 'react'
 import Home from './pages/home/Home'
 import WeekTasks from './pages/weekTasks/WeekTasks'
 import AllTasks from './pages/allTasks/AllTasks'
-import { useDispatch } from 'react-redux'
-import { addTasksData, setError } from './store/tasksSlice'
 import SignUp from './pages/signUp/SignUp'
-import Login from './pages/signIn/SignIn'
 import SignIn from './pages/signIn/SignIn'
-import SignedUpIllustration from './illustrations/SignedUpIllustration'
 import SignedUp from './pages/signedUp/SignedUp'
+import { useGetTasks } from './pages/home/useGetTasks'
 
 const App: React.FC = () => {
   const todos = [
@@ -32,31 +29,11 @@ const App: React.FC = () => {
     },
   ]
 
-  const dispatch = useDispatch()
-  const [isLoading, setIsLoading] = useState(false)
+  const { getTasks } = useGetTasks()
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setIsLoading(true)
-        const response = await fetch(
-          'https://todo-app-b9bc3-default-rtdb.europe-west1.firebasedatabase.app/Tasks.json'
-        )
-        if (!response.ok) {
-          throw new Error('Failed to load tasks.')
-        }
-
-        const data = await response.json()
-
-        dispatch(addTasksData(data))
-        setIsLoading(false)
-      } catch (error: any) {
-        dispatch(setError(error.message))
-        setIsLoading(false)
-      }
-    }
-    fetchData()
-  }, [dispatch])
+    getTasks
+  }, [])
 
   const [tasks, setTasks] = useState(todos)
 

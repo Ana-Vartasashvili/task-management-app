@@ -3,9 +3,11 @@ import CheckCircleIcon from '../../icons/CheckCircleIcon'
 import CheckCircleSolidIcon from '../../icons/CheckCircleSolidIcon'
 import DeleteIcon from '../../icons/DeleteIcon'
 import { TaskListItemProps } from './types'
+import { useDeleteTask } from '../../pages/home/useDeleteTask'
 
-const TaskListItem: React.FC<TaskListItemProps> = (props) => {
+const TaskListItem: React.FC<TaskListItemProps> = ({ id, name }) => {
   const [taskIsDone, setTaskIsDone] = useState(false)
+  const { deleteTask } = useDeleteTask(id)
 
   const markTaskAsDone = () => {
     setTaskIsDone(true)
@@ -17,10 +19,10 @@ const TaskListItem: React.FC<TaskListItemProps> = (props) => {
         <button onClick={markTaskAsDone}>
           {taskIsDone ? <CheckCircleSolidIcon /> : <CheckCircleIcon />}
         </button>
-        <span>{props.name}</span>
+        <span>{name}</span>
       </div>
 
-      <button onClick={() => props.onDeleteTask(props.id)}>
+      <button onClick={deleteTask}>
         <DeleteIcon />
       </button>
     </li>

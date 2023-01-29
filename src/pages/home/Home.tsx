@@ -1,13 +1,12 @@
 import Card from '../../components/card/Card'
 import AddTask from '../../components/Task/AddTask'
 import TasksList from '../../components/Tasks/TasksList'
-import { HomeProps } from '../types'
 
-const Home: React.FC<HomeProps> = (props) => {
+const Home: React.FC = (props) => {
   return (
     <Card>
-      <AddTask onAddTask={props.onAddTask} />
-      <TasksList onDeleteTask={props.onDeleteTask} />
+      <AddTask />
+      <TasksList />
     </Card>
   )
 }

@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import PlusIcon from '../../icons/PlusIcon'
-import { AddTaskProps } from './types'
 import { useAddTask } from '../../pages/home/useAddTask'
 
-const AddTask: React.FC<AddTaskProps> = (props) => {
+const AddTask: React.FC = (props) => {
   const [formIsShown, setFormIsShown] = useState(false)
   const [currentInputValue, setCurrentInputValue] = useState('')
   const { addTask } = useAddTask(currentInputValue, setCurrentInputValue)

@@ -1,11 +1,6 @@
 import { FormikValues } from 'formik'
 import { Tasks } from '../types/global'
 
-export type HomeProps = {
-  onDeleteTask: (id: string) => void
-  onAddTask: (taskName: string, id: string) => void
-}
-
 type FormFields = {
   first_name: string
   last_name: string

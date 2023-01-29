@@ -7,10 +7,7 @@ const Home: React.FC<HomeProps> = (props) => {
   return (
     <Card>
       <AddTask onAddTask={props.onAddTask} />
-      <TasksList
-        tasksData={props.tasksData}
-        onDeleteTask={props.onDeleteTask}
-      />
+      <TasksList onDeleteTask={props.onDeleteTask} />
     </Card>
   )
 }

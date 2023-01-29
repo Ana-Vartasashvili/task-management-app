@@ -1,19 +1,15 @@
 import { useState } from 'react'
 import PlusIcon from '../../icons/PlusIcon'
 import { AddTaskProps } from './types'
+import { useAddTask } from '../../pages/home/useAddTask'
 
 const AddTask: React.FC<AddTaskProps> = (props) => {
   const [formIsShown, setFormIsShown] = useState(false)
   const [currentInputValue, setCurrentInputValue] = useState('')
+  const { addTask } = useAddTask(currentInputValue, setCurrentInputValue)
 
   const toggleAddTaskForm = () => {
     setFormIsShown((prev) => !prev)
-  }
-
-  const addTask = (e: React.MouseEvent<HTMLElement>) => {
-    e.preventDefault()
-    props.onAddTask(currentInputValue, new Date().toISOString())
-    setCurrentInputValue('')
   }
 
   return (
@@ -29,7 +25,10 @@ const AddTask: React.FC<AddTaskProps> = (props) => {
       )}
 
       {formIsShown && (
-        <form className="mx-auto flex justify-center flex-col gap-4">
+        <form
+          onSubmit={(e) => e.preventDefault()}
+          className="mx-auto flex justify-center flex-col gap-4"
+        >
           <input
             type="text"
             placeholder="Task name"

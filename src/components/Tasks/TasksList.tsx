@@ -9,12 +9,12 @@ const TasksList: React.FC<TaskListProps> = (props) => {
   return (
     <div className="w-2/4 mx-auto">
       <ul className="flex flex-col gap-6">
-        {tasks.map((task) => {
+        {tasks.map(({ name, _id: id }) => {
           return (
             <TaskListItem
-              key={task.id}
-              name={task.name}
-              id={task.id}
+              key={id}
+              name={name}
+              id={id}
               onDeleteTask={props.onDeleteTask}
             />
           )

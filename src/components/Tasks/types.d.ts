@@ -1,7 +1,6 @@
 import { Tasks } from '../../types/global'
 
 export type TaskListProps = {
-  tasksData: Tasks[]
   onDeleteTask: (id: string) => void
 }
 

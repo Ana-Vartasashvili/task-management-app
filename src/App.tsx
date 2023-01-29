@@ -32,7 +32,7 @@ const App: React.FC = () => {
   const { getTasks } = useGetTasks()
 
   useEffect(() => {
-    getTasks
+    getTasks()
   }, [])
 
   const [tasks, setTasks] = useState(todos)
@@ -54,11 +54,7 @@ const App: React.FC = () => {
       <Route
         path="/"
         element={
-          <Home
-            tasksData={tasks}
-            onDeleteTask={deleteTaskHandler}
-            onAddTask={addTaskHandler}
-          />
+          <Home onDeleteTask={deleteTaskHandler} onAddTask={addTaskHandler} />
         }
       />
       <Route path="/tasks/next-seven-days" element={<WeekTasks />} />

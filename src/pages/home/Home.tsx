@@ -5,13 +5,16 @@ const Home = () => {
   return (
     <div className="h-screen w-screen bg-black_main px-20 py-14">
       <div className="text-right">
-        <Link to={'sign-in'} className="text-white font-light mr-8">
+        <Link
+          to={'sign-in'}
+          className="text-white font-light mr-8 border-[1.9px] rounded-xl border-black_main px-6 py-4 hover:border-main_purple hover: duration-300 ease-in-out"
+        >
           Sign in
         </Link>
 
         <Link
           to={'sign-up'}
-          className="text-white bg-main_purple px-6 py-4 rounded-xl"
+          className="text-white bg-main_purple px-6 py-4 rounded-xl hover:bg-dark_purple hover:duration-300 ease-in-out"
         >
           Sign up
         </Link>
@@ -31,7 +34,7 @@ const Home = () => {
           <div>
             <Link
               to={'/sign-up'}
-              className="bg-main_purple text-white py-6 px-12 text-[1.8rem] rounded-xl"
+              className="bg-main_purple text-white py-6 px-12 text-[1.8rem] rounded-xl hover:bg-dark_purple hover:duration-300 ease-in-out"
             >
               Get started
             </Link>

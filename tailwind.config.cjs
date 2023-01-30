@@ -21,6 +21,7 @@ module.exports = {
       lightBlue: '#4590F9',
       lightBlue_hover: '#3b82f6',
       main_purple: '#9a8cf3',
+      dark_purple: '#837ce5',
       SignUp_card_color: '#252525',
       SignUp_card_font_color: '#f8fafc',
       textColor_darkGray: '#44403c',

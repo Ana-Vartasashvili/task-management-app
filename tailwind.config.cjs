@@ -7,11 +7,20 @@ module.exports = {
       sans: ['Roboto', 'sans-serif'],
     },
 
+    fontWeight: {
+      normal: '400',
+      medium: '500',
+      semibold: '600',
+      bold: '700',
+    },
+
     colors: {
       black: '#000',
+      black_main: '#090909',
       darkBlue: '#111621',
       lightBlue: '#4590F9',
       lightBlue_hover: '#3b82f6',
+      main_purple: '#9a8cf3',
       SignUp_card_color: '#252525',
       SignUp_card_font_color: '#f8fafc',
       textColor_darkGray: '#44403c',

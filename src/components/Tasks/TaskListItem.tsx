@@ -3,7 +3,7 @@ import CheckCircleIcon from '../../icons/CheckCircleIcon'
 import CheckCircleSolidIcon from '../../icons/CheckCircleSolidIcon'
 import DeleteIcon from '../../icons/DeleteIcon'
 import { TaskListItemProps } from './types'
-import { useDeleteTask } from '../../pages/home/useDeleteTask'
+import { useDeleteTask } from '../../pages/tasks/useDeleteTask'
 
 const TaskListItem: React.FC<TaskListItemProps> = ({ id, name }) => {
   const [taskIsDone, setTaskIsDone] = useState(false)

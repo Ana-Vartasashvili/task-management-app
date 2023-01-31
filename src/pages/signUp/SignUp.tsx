@@ -56,7 +56,7 @@ const SignUp: React.FC = () => {
           <button
             disabled={isSubmitting}
             type="submit"
-            className={`w-full bg-lightBlue px-8 py-4 rounded-2xl text-white font-semibold hover:bg-lightBlue_hover hover:transition duration-300 ease-in-out ${
+            className={`w-full bg-main_purple px-8 py-4 rounded-2xl text-white font-semibold hover:bg-dark_purple hover:transition duration-300 ease-in-out ${
               isSubmitting && 'opacity-30 cursor-not-allowed'
             }`}
           >

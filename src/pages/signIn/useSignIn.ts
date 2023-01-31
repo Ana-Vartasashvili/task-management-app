@@ -14,7 +14,7 @@ export const useSignIn = () => {
 
       if (response.status === 200) {
         localStorage.setItem('token', response.data.accessToken)
-        navigate('/')
+        navigate('/tasks')
       }
     } catch (error: any) {
       const errorMessage = error.response.data.message

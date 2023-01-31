@@ -5,8 +5,8 @@ const PlusIcon = () => {
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
-      stroke="#4590F9"
-      className="w-8 h-8"
+      stroke="#9a8cf3"
+      className="w-8 h-8 text-main_purple "
     >
       <path
         strokeLinecap="round"

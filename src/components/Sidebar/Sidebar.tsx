@@ -6,10 +6,10 @@ import SidebarItem from '../Sidebar/SidebarItem'
 
 const Sidebar: React.FC = () => {
   return (
-    <div className="w-120 h-screen  fixed top-0 left-0 text-white bg-darkBlue px-10 ">
-      <ul className="mt-40 flex flex-col gap-20 text-2xl">
+    <div className="w-96 h-screen  fixed top-0 left-0 text-white bg-black_main px-5">
+      <ul className="mt-20 flex flex-col gap-2 text-xl">
         <li>
-          <Link to="/">
+          <Link to="/tasks">
             <SidebarItem>
               <SunIcon />
               <span>My day</span>

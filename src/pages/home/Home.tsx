@@ -45,6 +45,7 @@ const Home = () => {
           <img
             src={homePageIllustration}
             alt="girl working on computer illustration"
+            className="rounded-xl"
           />
         </div>
       </div>

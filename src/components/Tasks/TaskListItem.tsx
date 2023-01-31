@@ -14,7 +14,7 @@ const TaskListItem: React.FC<TaskListItemProps> = ({ id, name }) => {
   }
 
   return (
-    <li className="px-8 py-6 rounded-2xl border-[1.9px] flex justify-between items-center gap-4 group">
+    <li className="px-6 py-4 rounded-2xl border-[1.3px] text-md border-textColor_lightGray flex justify-between items-center gap-4 group font-thin">
       <div className="flex items-center gap-4">
         <button onClick={markTaskAsDone}>
           {taskIsDone ? <CheckCircleSolidIcon /> : <CheckCircleIcon />}

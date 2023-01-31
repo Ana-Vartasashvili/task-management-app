@@ -4,9 +4,9 @@ const DeleteIcon = () => {
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      strokeWidth={1.5}
+      strokeWidth={1.4}
       stroke="currentColor"
-      className="w-9 h-9 hover:text-lightBlue transition-all duration-300 ease-in-out"
+      className="w-7 h-7 hover:text-dark_purple transition-all duration-300 ease-in-out"
     >
       <path
         strokeLinecap="round"

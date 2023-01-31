@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import signedUpIllustration from '../../illustrations/undraw_Party_re_nmwj.png'
+import signedUpIllustration from '../../illustrations/undraw_Party_re_nmwj (1).png'
 
 const SignedUp = () => {
   return (

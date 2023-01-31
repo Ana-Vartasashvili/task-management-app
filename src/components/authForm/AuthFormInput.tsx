@@ -13,7 +13,7 @@ const AuthFormInput: React.FC<AuthFormInputProps> = (props) => {
         value={values?.[id]}
         onChange={handleChange}
         onBlur={handleBlur}
-        className={`outline-none w-full px-8 py-3 rounded-2xl border-[1.9px] border-white focus:border-lightBlue focus:border-solid ${
+        className={`outline-none w-full px-8 py-3 rounded-2xl border-[1.9px] border-white focus:border-main_purple focus:border-solid ${
           errors[id] && touched[id] && '!border-red placeholder:opacity-70'
         }`}
       />

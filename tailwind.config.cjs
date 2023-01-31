@@ -7,16 +7,9 @@ module.exports = {
       sans: ['Roboto', 'sans-serif'],
     },
 
-    fontWeight: {
-      thin: '100',
-      normal: '400',
-      medium: '500',
-      semibold: '600',
-      bold: '700',
-    },
-
     colors: {
       black: '#000',
+      text_black: '#1f2937',
       black_main: '#090909',
       darkBlue: '#111621',
       lightBlue: '#4590F9',
@@ -26,7 +19,9 @@ module.exports = {
       SignUp_card_color: '#252525',
       SignUp_card_font_color: '#f8fafc',
       textColor_darkGray: '#44403c',
+      textColor_gray: '#8c9283',
       gray: '#9398A7',
+      dark_gray: '#343a40',
       white: '#FFFFFF',
       red: '#b91c1c',
 

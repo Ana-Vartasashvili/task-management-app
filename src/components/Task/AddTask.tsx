@@ -19,7 +19,7 @@ const AddTask: React.FC = () => {
     <div className="mb-8">
       {!formIsShown && (
         <button
-          className="mt-40 mx-auto w-2/4 flex justify-start items-center gap-2 text-lg hover:text-main_purple"
+          className="mt-24 mx-auto w-2/4 flex justify-start items-center gap-2 text-lg hover:text-main_purple"
           onClick={toggleAddTaskForm}
         >
           <PlusIcon />

@@ -19,7 +19,7 @@ const TaskListItem: React.FC<TaskListItemProps> = ({ id, name }) => {
         <button onClick={markTaskAsDone}>
           {taskIsDone ? <CheckCircleSolidIcon /> : <CheckCircleIcon />}
         </button>
-        <span>{name}</span>
+        <span className="text-text_black">{name}</span>
       </div>
 
       <button onClick={deleteTask}>

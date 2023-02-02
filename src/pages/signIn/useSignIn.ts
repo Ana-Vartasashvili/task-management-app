@@ -4,9 +4,11 @@ import { LoginInputValues } from '../types'
 import { notify } from '../../helpers/notify'
 import { useFormik } from 'formik'
 import { useNavigate } from 'react-router-dom'
+import { useGetTasks } from '../tasks/useGetTasks'
 
 export const useSignIn = () => {
   const navigate = useNavigate()
+  const { getTasks } = useGetTasks()
 
   const onSubmit = async (values: LoginInputValues, { setFieldError }: any) => {
     try {
@@ -14,6 +16,7 @@ export const useSignIn = () => {
 
       if (response.status === 200) {
         localStorage.setItem('token', response.data.accessToken)
+        getTasks()
         navigate('/tasks')
       }
     } catch (error: any) {

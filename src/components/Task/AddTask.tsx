@@ -54,7 +54,7 @@ const AddTask: React.FC = () => {
               type="submit"
               disabled={inputIsEmpty}
               className={`px-5 py-2 rounded-lg bg-main_purple hover:bg-dark_purple duration-300 ease-in-out text-white ${
-                inputIsEmpty || (isLoading && 'opacity-50 cursor-not-allowed')
+                (inputIsEmpty || isLoading) && 'opacity-50 cursor-not-allowed'
               }`}
             >
               Add task

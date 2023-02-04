@@ -21,7 +21,7 @@ const Home = () => {
       </div>
 
       <div className="flex items-start justify-between mt-14">
-        <div className="w-[55rem]">
+        <div className="w-2/4">
           <h1 className="text-white text-[7rem] font-medium leading-tight">
             Manage your tasks easily with Todoer
             <span className="text-main_purple">!</span>
@@ -41,7 +41,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="w-[44rem]">
+        <div className="w-5/12">
           <img
             src={homePageIllustration}
             alt="girl working on computer illustration"

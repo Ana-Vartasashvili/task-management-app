@@ -40,10 +40,13 @@ const Sidebar: React.FC = () => {
         </li>
       </ul>
 
-      <div className="mb-10 flex items-center gap-5">
+      <button
+        onClick={signOut}
+        className="mb-10 flex items-center gap-5 border w-fit px-4 py-3 rounded-2xl border-main_purple hover:bg-dark_purple hover:text-white duration-300 ease-in-out"
+      >
         <SignOutIcon />
-        <button onClick={signOut}>Log out</button>
-      </div>
+        <p>Log out</p>
+      </button>
     </div>
   )
 }

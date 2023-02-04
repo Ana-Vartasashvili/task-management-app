@@ -8,9 +8,18 @@ const TasksList: React.FC = (props) => {
   return (
     <div className="w-2/4 mx-auto">
       <ul className="flex flex-col gap-6">
-        {tasks.map(({ name, _id: id }) => {
-          return <TaskListItem key={id} name={name} id={id} />
-        })}
+        {tasks
+          .filter((task) => task.completed !== true)
+          .map(({ name, _id: id, completed }) => {
+            return (
+              <TaskListItem
+                key={id}
+                name={name}
+                id={id}
+                isCompleted={completed}
+              />
+            )
+          })}
       </ul>
     </div>
   )

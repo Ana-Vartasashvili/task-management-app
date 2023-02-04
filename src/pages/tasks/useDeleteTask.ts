@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux'
 import axios from '../../services/axios'
 import { addTasksData } from '../../store/tasksSlice'
+import { notify } from '../../helpers/notify'
 
 export const useDeleteTask = (id: string) => {
   const dispatch = useDispatch()
@@ -14,7 +15,11 @@ export const useDeleteTask = (id: string) => {
       })
 
       dispatch(addTasksData(response.data.list))
-    } catch (error) {}
+    } catch (error: any) {
+      const errorMessage = error.response.data
+
+      errorMessage && notify(errorMessage)
+    }
   }
 
   return { deleteTask }

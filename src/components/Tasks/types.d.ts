@@ -4,5 +4,4 @@ export type TaskListItemProps = {
   name: string
   id: string
   key: string
-  isCompleted: boolean
 }

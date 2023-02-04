@@ -11,14 +11,7 @@ const TasksList: React.FC = (props) => {
         {tasks
           .filter((task) => task.completed !== true)
           .map(({ name, _id: id, completed }) => {
-            return (
-              <TaskListItem
-                key={id}
-                name={name}
-                id={id}
-                isCompleted={completed}
-              />
-            )
+            return <TaskListItem key={id} name={name} id={id} />
           })}
       </ul>
     </div>

@@ -4,9 +4,9 @@ import { RootState } from '../../store/store'
 import tasksIllustration from '../../illustrations/No comments yet.png'
 
 const TasksList: React.FC = (props) => {
-  const tasks = useSelector((state: RootState) => state.tasks.tasks).filter(
-    (task) => task.completed !== true
-  )
+  const tasks = useSelector((state: RootState) => state.tasks.tasks)
+    .filter((task) => task.completed !== true)
+    .reverse()
 
   return (
     <div className="w-2/4 mx-auto">
@@ -22,6 +22,7 @@ const TasksList: React.FC = (props) => {
           <span className="text-[1.35rem]">Click + to add a task</span>
         </div>
       )}
+
       <ul className="flex flex-col gap-6">
         {tasks.map(({ name, _id: id, completed }) => {
           return <TaskListItem key={id} name={name} id={id} />

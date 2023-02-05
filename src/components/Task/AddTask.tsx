@@ -16,7 +16,7 @@ const AddTask: React.FC = () => {
   }
 
   return (
-    <div className="mb-8 mt-24">
+    <div className="mb-8">
       {!formIsShown && (
         <button
           className="mx-auto w-2/4 flex justify-start items-center gap-3 text-lg hover:text-main_purple"
@@ -30,14 +30,14 @@ const AddTask: React.FC = () => {
       {formIsShown && (
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="mx-auto flex justify-center flex-col gap-4 text-[1.4rem]"
+          className="flex justify-center flex-col gap-4 mx-auto text-[1.4rem]"
         >
           <input
             type="text"
             placeholder="Task name"
             value={currentInputValue}
             onChange={(e) => setCurrentInputValue(e.target.value)}
-            className="border-[1.8px] w-2/4 border-solid border-textColor_lightGray rounded-2xl p-4 mx-auto flex justify-center hover:border-main_purple focus:outline-none focus:border-main_purple"
+            className="border-[1.5px] w-2/4 border-solid border-gray rounded-2xl p-4 mx-auto flex justify-center hover:border-main_purple focus:outline-none focus:border-main_purple"
           />
 
           <div className="mx-auto flex justify-end gap-5 w-2/4">

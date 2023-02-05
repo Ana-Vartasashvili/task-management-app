@@ -5,8 +5,13 @@ import SunIcon from '../../icons/SunIcon'
 import SidebarItem from '../Sidebar/SidebarItem'
 import { useSignOut } from '../../pages/tasks/useSignOut'
 import SignOutIcon from '../../icons/SignOutIcon'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../store/store'
 
 const Sidebar: React.FC = () => {
+  const tasks = useSelector((state: RootState) => state.tasks.tasks).filter(
+    (task) => task.completed !== true
+  )
   const { signOut } = useSignOut()
 
   return (
@@ -16,7 +21,12 @@ const Sidebar: React.FC = () => {
           <Link to="/tasks">
             <SidebarItem>
               <SunIcon />
-              <span>My day</span>
+              <span className="relative">My day</span>
+              {tasks.length > 0 && (
+                <span className="absolute right-11 text-[1.15rem]">
+                  {tasks.length}
+                </span>
+              )}
             </SidebarItem>
           </Link>
         </li>

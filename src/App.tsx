@@ -9,6 +9,7 @@ import SignIn from './pages/signIn/SignIn'
 import SignedUp from './pages/signedUp/SignedUp'
 import { useGetTasks } from './pages/tasks/useGetTasks'
 import Tasks from './pages/tasks/Tasks'
+import Card from './components/card/Card'
 
 const App = () => {
   const { getTasks } = useGetTasks()
@@ -20,9 +21,11 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/tasks" element={<Tasks />} />
-      <Route path="/tasks/next-seven-days" element={<WeekTasks />} />
-      <Route path="/tasks/all" element={<AllTasks />} />
+      <Route path="/tasks" element={<Card />}>
+        <Route index element={<Tasks />} />
+        <Route path="next-seven-days" element={<WeekTasks />} />
+        <Route path="all" element={<AllTasks />} />
+      </Route>
       <Route path="/Sign-up" element={<SignUp />} />
       <Route path="/sign-in" element={<SignIn />} />
       <Route path="/signed-up" element={<SignedUp />} />

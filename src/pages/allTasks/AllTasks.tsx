@@ -27,13 +27,13 @@ const AllTasks: React.FC = (props) => {
   })
 
   return (
-    <Card>
-      <div className="w-2/4 mx-auto">
+    <>
+      <div className="w-2/4 h-screen mx-auto">
         <h1 className=" font-semibold text-black_main text-[1.75rem]">
           All my tasks
         </h1>
 
-        <div className="w-full h-[62rem] flex flex-col justify-between border-[1.5px] border-textColor_lightGray mt-5 rounded-xl">
+        <div className="w-full h-2/3 flex flex-col justify-between border-[1.5px] border-textColor_lightGray mt-5 rounded-xl">
           <div></div>
 
           <form
@@ -61,7 +61,7 @@ const AllTasks: React.FC = (props) => {
           </form>
         </div>
       </div>
-    </Card>
+    </>
   )
 }
 

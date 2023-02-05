@@ -44,7 +44,7 @@ const Home = () => {
         <div className="w-[45rem]">
           <img
             src={homePageIllustration}
-            alt="girl working on computer illustration"
+            alt="simple illustration of a boy and diagrams"
             className="rounded-xl"
           />
         </div>

@@ -7,7 +7,7 @@ const SignedUp = () => {
       <div className="flex justify-center flex-col items-center ">
         <img
           src={signedUpIllustration}
-          alt="Simple party illustration"
+          alt="simple illustration of boy sitting on a mountain"
           className="w-[36rem]"
         />
         <h1 className="text-4xl text-darkBlue">All Done!</h1>

@@ -6,7 +6,7 @@ const PlusIcon = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="#9a8cf3"
-      className="w-8 h-8 text-main_purple "
+      className="w-8 h-8 text-main_purple"
     >
       <path
         strokeLinecap="round"

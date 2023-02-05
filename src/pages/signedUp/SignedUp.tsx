@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import signedUpIllustration from '../../illustrations/undraw_Party_re_nmwj (1).png'
+import signedUpIllustration from '../../illustrations/Success.png'
 
 const SignedUp = () => {
   return (
@@ -8,7 +8,7 @@ const SignedUp = () => {
         <img
           src={signedUpIllustration}
           alt="Simple party illustration"
-          className="w-[45rem]"
+          className="w-[36rem]"
         />
         <h1 className="text-4xl text-darkBlue">All Done!</h1>
         <p className="text-textColor_darkGray text-m">

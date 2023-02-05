@@ -23,14 +23,14 @@ const AddTask: React.FC = () => {
           onClick={toggleAddTaskForm}
         >
           <PlusIcon />
-          <span className="text-[1.7rem]">Add task</span>
+          <span className="text-[1.6rem]">Add task</span>
         </button>
       )}
 
       {formIsShown && (
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="mx-auto flex justify-center flex-col gap-4"
+          className="mx-auto flex justify-center flex-col gap-4 text-[1.4rem]"
         >
           <input
             type="text"

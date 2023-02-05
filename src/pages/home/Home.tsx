@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import homePageIllustration from '../../illustrations/girl_working.png'
+import homePageIllustration from '../../illustrations/Analythics.png'
 
 const Home = () => {
   return (
@@ -22,12 +22,12 @@ const Home = () => {
 
       <div className="flex items-start justify-between mt-14">
         <div className="w-2/4">
-          <h1 className="text-white text-[7rem] font-medium leading-tight">
+          <h1 className="text-white text-[7rem] font-medium leading-tight mt-5">
             Manage your tasks easily with Todoer
             <span className="text-main_purple">!</span>
           </h1>
 
-          <p className="text-[1.8rem] mb-16 text-textColor_lightGray">
+          <p className="text-[1.8rem] mb-28 text-textColor_lightGray">
             Todoer helps you create and manage tasks in one convenient place.
           </p>
 
@@ -41,7 +41,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="w-5/12">
+        <div className="w-[45rem]">
           <img
             src={homePageIllustration}
             alt="girl working on computer illustration"

@@ -4,6 +4,7 @@ import { AllTasksListItemPros } from '../types'
 import { useUpdateTaskIsCompleted } from '../tasks/useUpdateTaskIsCompleted'
 import CheckCircleSolidIcon from '../../icons/CheckCircleSolidIcon'
 import DeleteIcon from '../../icons/DeleteIcon'
+import { useDeleteTask } from '../tasks/useDeleteTask'
 
 const AllTasksListItem: React.FC<AllTasksListItemPros> = ({
   taskName,
@@ -11,6 +12,7 @@ const AllTasksListItem: React.FC<AllTasksListItemPros> = ({
   id,
 }) => {
   const { updateTaskIsCompleted } = useUpdateTaskIsCompleted()
+  const { deleteTask } = useDeleteTask(id)
 
   const updateIsCompleted = () => {
     updateTaskIsCompleted(id, isCompleted)
@@ -39,7 +41,7 @@ const AllTasksListItem: React.FC<AllTasksListItemPros> = ({
           </span>
         </div>
 
-        <button>
+        <button onClick={deleteTask}>
           <DeleteIcon />
         </button>
       </div>

@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
 import { useEffect } from 'react'
-import React from 'react'
 import Home from './pages/home/Home'
 import WeekTasks from './pages/weekTasks/WeekTasks'
 import AllTasks from './pages/allTasks/AllTasks'

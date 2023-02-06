@@ -1,13 +1,11 @@
-import React from 'react'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store/store'
 import UpArrowIcon from '../../icons/UpArrowIcon'
 import { useState } from 'react'
 import { useAddTask } from '../tasks/useAddTask'
-import AllTasksListItem from './AllTasksListItem'
+import AllTasksList from './AllTasksList'
 
 const AllTasks = () => {
-  const tasks = useSelector((state: RootState) => state.tasks.tasks)
   const [inputValue, setInputValue] = useState('')
   const { addTask } = useAddTask(inputValue, setInputValue)
 
@@ -18,13 +16,13 @@ const AllTasks = () => {
           All my tasks
         </h1>
 
-        <div className="w-full h-5/6 flex flex-col justify-between border-[1.5px] border-textColor_lightGray mt-5 rounded-3xl">
-          <ul className="mt-[3rem] mx-4">
-            <AllTasksListItem />
-          </ul>
+        <div className="w-full h-5/6 border-[1.5px] border-textColor_lightGray mt-5 rounded-3xl overflow-y-scroll no-scrollbar no-scrollbar::-webkit-scrollbar relative">
+          <div>
+            <AllTasksList />
+          </div>
 
           <form
-            className="bg-black_main rounded-b-3xl py-4 px-5 flex justify-between gap-4"
+            className="bg-black_main text-end bottom-0 left-0 rounded-b-3xl py-4 px-5 flex justify-between gap-4 "
             onSubmit={(e) => e.preventDefault()}
           >
             <input

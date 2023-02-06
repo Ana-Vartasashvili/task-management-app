@@ -34,3 +34,8 @@ export type LoginInputValues = {
   email: string
   password: string
 }
+
+export type AllTasksListItemPros = {
+  taskName: string
+  isCompleted: boolean
+}

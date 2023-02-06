@@ -9,7 +9,7 @@ const TasksList: React.FC = (props) => {
     .reverse()
 
   return (
-    <div className="w-2/4 mx-auto">
+    <div className="w-2/4 mx-auto pb-20">
       {tasks.length === 0 && (
         <div className="w-[30rem] mx-auto mt-32 flex flex-col justify-center items-center">
           <img
@@ -25,7 +25,14 @@ const TasksList: React.FC = (props) => {
 
       <ul className="flex flex-col gap-6">
         {tasks.map(({ name, _id: id, completed }) => {
-          return <TaskListItem key={id} name={name} id={id} />
+          return (
+            <TaskListItem
+              key={id}
+              name={name}
+              id={id}
+              isCompleted={completed}
+            />
+          )
         })}
       </ul>
     </div>

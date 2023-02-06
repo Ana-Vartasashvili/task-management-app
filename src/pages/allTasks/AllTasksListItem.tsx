@@ -1,22 +1,47 @@
 import CheckCircleIcon from '../../icons/CheckCircleIcon'
 import CheckMarkIcon from '../../icons/CheckMarkIcon'
 import { AllTasksListItemPros } from '../types'
+import { useUpdateTaskIsCompleted } from '../tasks/useUpdateTaskIsCompleted'
+import CheckCircleSolidIcon from '../../icons/CheckCircleSolidIcon'
+import DeleteIcon from '../../icons/DeleteIcon'
 
 const AllTasksListItem: React.FC<AllTasksListItemPros> = ({
   taskName,
   isCompleted,
+  id,
 }) => {
+  const { updateTaskIsCompleted } = useUpdateTaskIsCompleted()
+
+  const updateIsCompleted = () => {
+    updateTaskIsCompleted(id, isCompleted)
+  }
+
   return (
     <li className="px-6 py-4 rounded-2xl border-[1.5px] text-md border-textColor_lightGray flex justify-between items-center gap-4 group font-thin">
-      <div className="flex items-center gap-4">
-        <button>
-          <div className="relative">
-            <CheckCircleIcon />
-            <CheckMarkIcon />
-          </div>
-        </button>
+      <div className="flex w-full justify-between">
+        <div className="flex items-center gap-4">
+          <button onClick={updateIsCompleted}>
+            {!isCompleted && (
+              <div className="relative">
+                <CheckCircleIcon />
+                <CheckMarkIcon />
+              </div>
+            )}
+            {isCompleted && <CheckCircleSolidIcon />}
+          </button>
 
-        <span className="text-dark_gray">{taskName}</span>
+          <span
+            className={`text-dark_gray ${
+              isCompleted && 'text-textColor_gray line-through'
+            }`}
+          >
+            {taskName}
+          </span>
+        </div>
+
+        <button>
+          <DeleteIcon />
+        </button>
       </div>
     </li>
   )

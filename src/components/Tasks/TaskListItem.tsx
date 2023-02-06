@@ -7,13 +7,17 @@ import { useUpdateTaskIsCompleted } from '../../pages/tasks/useUpdateTaskIsCompl
 import CheckMarkIcon from '../../icons/CheckMarkIcon'
 import { useState } from 'react'
 
-const TaskListItem: React.FC<TaskListItemProps> = ({ id, name }) => {
+const TaskListItem: React.FC<TaskListItemProps> = ({
+  id,
+  name,
+  isCompleted,
+}) => {
   const { deleteTask } = useDeleteTask(id)
   const { updateTaskIsCompleted } = useUpdateTaskIsCompleted()
   const [taskIsCompleted, setTaskIsCompleted] = useState(false)
 
   const updateIsCompleted = () => {
-    updateTaskIsCompleted(id, true)
+    updateTaskIsCompleted(id, isCompleted)
     setTaskIsCompleted(true)
   }
 

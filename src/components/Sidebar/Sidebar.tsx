@@ -9,8 +9,8 @@ import { useSelector } from 'react-redux'
 import { RootState } from '../../store/store'
 
 const Sidebar: React.FC = () => {
-  const allTasks = useSelector((state: RootState) => state.tasks.tasks)
-  const uncompletedTasks = allTasks.filter((task) => task.completed !== true)
+  const allTasks = useSelector((state: RootState) => state.tasks?.tasks)
+  const uncompletedTasks = allTasks.filter((task) => task?.completed !== true)
   const { signOut } = useSignOut()
 
   return (
@@ -44,9 +44,9 @@ const Sidebar: React.FC = () => {
             <SidebarItem>
               <ClipboardIcon />
               <span>All my tasks</span>
-              {allTasks.length > 0 && (
+              {uncompletedTasks.length > 0 && (
                 <span className="absolute right-11 text-[1.15rem]">
-                  {allTasks.length}
+                  {uncompletedTasks.length}
                 </span>
               )}
             </SidebarItem>

@@ -14,7 +14,7 @@ export const useDeleteTask = (id: string) => {
         },
       })
 
-      dispatch(addTasksData(response.data.list))
+      dispatch(addTasksData(response.data.list.reverse()))
     } catch (error: any) {
       const errorMessage = error.response.data
 

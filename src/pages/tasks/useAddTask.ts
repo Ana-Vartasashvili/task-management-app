@@ -23,9 +23,8 @@ export const useAddTask = (
         }
       )
 
-      dispatch(addTasksData(response.data.list))
+      dispatch(addTasksData(response.data.list.reverse()))
       setTaskName('')
-      console.log(response.data)
       setIsLoading(false)
     } catch (error) {}
   }

@@ -11,7 +11,7 @@ export const useUpdateTaskIsCompleted = () => {
       const response = await axios.put(
         `/todos/${id}`,
         {
-          completed: isCompleted,
+          completed: !isCompleted,
         },
         {
           headers: {
@@ -20,7 +20,7 @@ export const useUpdateTaskIsCompleted = () => {
         }
       )
 
-      dispatch(addTasksData(response.data.list))
+      dispatch(addTasksData(response.data.list.reverse()))
     } catch (error: any) {
       const errorMessage = error.response.data
 

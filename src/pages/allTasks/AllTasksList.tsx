@@ -10,6 +10,7 @@ const AllTasksList = () => {
       {tasks.map((task) => (
         <AllTasksListItem
           key={task._id}
+          id={task._id}
           taskName={task.name}
           isCompleted={task.completed}
         />

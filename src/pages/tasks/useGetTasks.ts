@@ -13,7 +13,7 @@ export const useGetTasks = () => {
         },
       })
 
-      dispatch(addTasksData(response.data))
+      dispatch(addTasksData(response.data.reverse()))
     } catch (error: any) {
       setError(error.response.data.message)
     }

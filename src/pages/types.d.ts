@@ -36,6 +36,7 @@ export type LoginInputValues = {
 }
 
 export type AllTasksListItemPros = {
+  id: string
   taskName: string
   isCompleted: boolean
 }

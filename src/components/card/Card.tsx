@@ -11,7 +11,7 @@ const Card = () => {
       <div className="hidden mdl:block absolute">
         <Sidebar />
       </div>
-      <div className="pt-24 h-full bg-white w-full px-16 mdl:pl-[28rem] mdl:pr-[4rem]">
+      <div className="pt-24 pb-10 h-full bg-white w-full px-10 xs:px-16 mdl:pl-[28rem] mdl:pr-[4rem]">
         <Outlet />
       </div>
     </div>

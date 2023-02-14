@@ -8,7 +8,7 @@ const AllTasks = () => {
   const { addTask } = useAddTask(inputValue, setInputValue)
 
   return (
-    <div className="w-2/4 h-full mx-auto">
+    <div className="max-w-[70rem] h-full mx-auto">
       <h1 className="font-semibold text-black_main text-[1.8rem]">
         All my tasks
       </h1>
@@ -26,7 +26,7 @@ const AllTasks = () => {
           id="name"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Click to quickly add a task"
+          placeholder="Click to add a task"
           className="bg-dark_gray text-[1.3rem] w-11/12 rounded-full placeholder-textColor_gray py-2 px-4 border-[1.5px] text-white border-dark_gray focus:outline-none hover:border-main_purple focus:border-main_purple"
         />
 

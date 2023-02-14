@@ -1,55 +1,55 @@
-import { useLocation } from 'react-router-dom'
-import ClipboardIcon from '../../icons/ClipboardIcon'
+import { Link } from 'react-router-dom'
 import SunIcon from '../../icons/SunIcon'
-import { useSignOut } from '../../pages/tasks/useSignOut'
+import XIcon from '../../icons/XIcon'
 import SignOutIcon from '../../icons/SignOutIcon'
-import { useSelector } from 'react-redux'
-import { RootState } from '../../store/store'
-import SidebarItem from './SidebarItem'
-import MenuIcon from '../../icons/MenuIcon'
+import ClipboardIcon from '../../icons/ClipboardIcon'
+import { useSignOut } from '../../pages/tasks/useSignOut'
 
-const Sidebar: React.FC = () => {
-  const allTasks = useSelector((state: RootState) => state.tasks?.tasks)
-  const uncompletedTasks = allTasks.filter((task) => task?.completed !== true)
+const Sidebar: React.FC<{ handleIsVisible: () => void }> = ({
+  handleIsVisible,
+}) => {
   const { signOut } = useSignOut()
 
-  const currentPath = useLocation().pathname
-
   return (
-    <div className="w-96 h-screen text-[1.5rem] text-gray  fixed top-0 left-0 bg-black_main px-7 flex flex-col justify-between">
-      <ul className="mt-20 flex flex-col gap-3 text-md">
-        <li>
-          <SidebarItem path="/tasks" currentPath={currentPath}>
-            <SunIcon />
-            <span className="relative">My day</span>
-            {uncompletedTasks.length > 0 && (
-              <span className="absolute right-11 text-[1.15rem]">
-                {uncompletedTasks.length}
-              </span>
-            )}
-          </SidebarItem>
-        </li>
+    <div className="w-screen h-screen bg-black_main px-10 mdl:hidden">
+      <div className="text-white">
+        <div
+          className="w-14 h-14 absolute top-6 right-8"
+          onClick={handleIsVisible}
+        >
+          <XIcon />
+        </div>
 
-        <li>
-          <SidebarItem path="/tasks/all" currentPath={currentPath}>
-            <ClipboardIcon />
-            <span>All my tasks</span>
-            {uncompletedTasks.length > 0 && (
-              <span className="absolute right-11 text-[1.15rem]">
-                {uncompletedTasks.length}
-              </span>
-            )}
-          </SidebarItem>
-        </li>
-      </ul>
+        <div className=" flex flex-col items-start mt-36 gap-5 w-full">
+          <div className="flex flex-col gap-3 w-full">
+            <div className="w-full">
+              <Link
+                to="/tasks"
+                className="flex gap-5 items-center px-3 py-8 border-b-[1px] border-gray"
+              >
+                <SunIcon />
+                <span className="relative">My day</span>
+              </Link>
+            </div>
 
-      <button
-        onClick={signOut}
-        className="mb-14 flex items-center gap-5 border w-fit px-4 py-3 rounded-2xl border-main_purple hover:bg-dark_purple hover:text-white duration-300 ease-in-out"
-      >
-        <SignOutIcon />
-        <p>Log out</p>
-      </button>
+            <Link
+              to="/tasks/all"
+              className="flex gap-5 items-center px-3 py-8 border-b-[1px] border-gray"
+            >
+              <ClipboardIcon />
+              <span className="relative">All my tasks</span>
+            </Link>
+
+            <button
+              onClick={signOut}
+              className="flex items-center gap-5 px-3 py-8 border-b-[1px] border-gray"
+            >
+              <SignOutIcon />
+              <p>Log out</p>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

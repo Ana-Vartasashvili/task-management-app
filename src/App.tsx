@@ -8,7 +8,7 @@ import SignIn from './pages/signIn/SignIn'
 import SignedUp from './pages/signedUp/SignedUp'
 import { useGetTasks } from './pages/tasks/useGetTasks'
 import Tasks from './pages/tasks/Tasks'
-import Card from './components/card/Card'
+import Card from './components/Card/Card'
 import PageNotFound from './pages/pageNotFound/PageNotFound'
 
 const App = () => {

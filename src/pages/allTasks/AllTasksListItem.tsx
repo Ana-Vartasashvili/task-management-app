@@ -3,7 +3,7 @@ import CheckMarkIcon from '../../icons/CheckMarkIcon'
 import { AllTasksListItemPros } from '../types'
 import { useUpdateTaskIsCompleted } from '../tasks/useUpdateTaskIsCompleted'
 import CheckCircleSolidIcon from '../../icons/CheckCircleSolidIcon'
-import DeleteIcon from '../../icons/DeleteIcon'
+import XIcon from '../../icons/XIcon'
 import { useDeleteTask } from '../tasks/useDeleteTask'
 
 const AllTasksListItem: React.FC<AllTasksListItemPros> = ({
@@ -42,7 +42,9 @@ const AllTasksListItem: React.FC<AllTasksListItemPros> = ({
         </div>
 
         <button onClick={deleteTask}>
-          <DeleteIcon />
+          <div className="w-7 h-7">
+            <XIcon />
+          </div>
         </button>
       </div>
     </li>

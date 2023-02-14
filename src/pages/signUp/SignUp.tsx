@@ -1,8 +1,8 @@
 import { Link, Navigate } from 'react-router-dom'
-import AuthFormInput from '../../components/authForm/AuthFormInput'
+import AuthFormInput from '../../components/AuthForm/AuthFormInput'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import AuthFormCard from '../../components/authForm/AuthFormCard'
+import AuthFormCard from '../../components/AuthForm/AuthFormCard'
 import { useSignUp } from './useSignUp'
 
 const SignUp: React.FC = () => {

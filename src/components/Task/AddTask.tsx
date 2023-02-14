@@ -19,7 +19,7 @@ const AddTask: React.FC = () => {
     <div className="mb-8 mt-14 max-w-[70rem] mx-auto">
       {!formIsShown && (
         <button
-          className="flex justify-start items-center gap-3 text-lg w-full hover:text-main_purple"
+          className="flex justify-start items-center  gap-3 text-lg w-full hover:text-main_purple"
           onClick={toggleAddTaskForm}
         >
           <PlusIcon />
@@ -44,7 +44,7 @@ const AddTask: React.FC = () => {
             <button
               onClick={toggleAddTaskForm}
               type="button"
-              className="px-4 py-2 rounded-lg bg-buttonGray"
+              className="px-5 py-2 rounded-lg bg-buttonGray"
             >
               Cancel
             </button>

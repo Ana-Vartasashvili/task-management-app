@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import { SideBarItemProps } from './types'
+import { NavbarItemProps } from './types'
 
-const SidebarItem: React.FC<SideBarItemProps> = (props) => {
+const NavbarItem: React.FC<NavbarItemProps> = (props) => {
   return (
     <Link
       to={props.path}
@@ -14,4 +14,4 @@ const SidebarItem: React.FC<SideBarItemProps> = (props) => {
   )
 }
 
-export default SidebarItem
+export default NavbarItem

@@ -1,6 +1,6 @@
 import CheckCircleIcon from '../../icons/CheckCircleIcon'
 import CheckCircleSolidIcon from '../../icons/CheckCircleSolidIcon'
-import DeleteIcon from '../../icons/DeleteIcon'
+import XIcon from '../../icons/XIcon'
 import { TaskListItemProps } from './types'
 import { useDeleteTask } from '../../pages/tasks/useDeleteTask'
 import { useUpdateTaskIsCompleted } from '../../pages/tasks/useUpdateTaskIsCompleted'
@@ -38,7 +38,9 @@ const TaskListItem: React.FC<TaskListItemProps> = ({
       </div>
 
       <button onClick={deleteTask}>
-        <DeleteIcon />
+        <div className="w-7 h-7">
+          <XIcon />
+        </div>
       </button>
     </li>
   )

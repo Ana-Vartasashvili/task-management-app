@@ -15,7 +15,7 @@ export const useAddTask = (
       setIsLoading(true)
       const response = await axios.post(
         '/todos',
-        { name: taskName },
+        { name: taskName.trim() },
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,

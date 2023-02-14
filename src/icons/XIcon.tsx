@@ -1,12 +1,12 @@
-const DeleteIcon = () => {
+const XIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
-      strokeWidth={1.4}
+      strokeWidth={1.5}
       stroke="currentColor"
-      className="w-7 h-7 hover:text-dark_purple hover:scale-[115%] transition-all duration-300 ease-in-out"
+      className="w-full h-full hover:text-dark_purple hover:scale-[115%] transition-all duration-300 ease-in-out"
     >
       <path
         strokeLinecap="round"
@@ -17,4 +17,4 @@ const DeleteIcon = () => {
   )
 }
 
-export default DeleteIcon
+export default XIcon

@@ -9,6 +9,7 @@ import SignedUp from './pages/signedUp/SignedUp'
 import { useGetTasks } from './pages/tasks/useGetTasks'
 import Tasks from './pages/tasks/Tasks'
 import Card from './components/card/Card'
+import PageNotFound from './pages/pageNotFound/PageNotFound'
 
 const App = () => {
   const { getTasks } = useGetTasks()
@@ -28,6 +29,7 @@ const App = () => {
       <Route path="/Sign-up" element={<SignUp />} />
       <Route path="/sign-in" element={<SignIn />} />
       <Route path="/signed-up" element={<SignedUp />} />
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   )
 }

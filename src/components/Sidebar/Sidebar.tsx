@@ -25,26 +25,32 @@ const Sidebar: React.FC<{ handleIsVisible: () => void }> = ({
             <div className="w-full">
               <Link
                 to="/tasks"
-                className="flex gap-5 items-center px-3 py-8 border-b-[1px] border-gray"
+                className="flex gap-5 items-center px-3 py-8 border-b-[1px] border-textColor_gray"
               >
-                <SunIcon />
+                <div className="w-10 h-10">
+                  <SunIcon />
+                </div>
                 <span className="relative">My day</span>
               </Link>
             </div>
 
             <Link
               to="/tasks/all"
-              className="flex gap-5 items-center px-3 py-8 border-b-[1px] border-gray"
+              className="flex gap-5 items-center px-3 py-8 border-b-[1px] border-textColor_gray"
             >
-              <ClipboardIcon />
+              <div className="w-10 h-10">
+                <ClipboardIcon />
+              </div>
               <span className="relative">All my tasks</span>
             </Link>
 
             <button
               onClick={signOut}
-              className="flex items-center gap-5 px-3 py-8 border-b-[1px] border-gray"
+              className="flex items-center gap-5 px-3 py-8 border-b-[1px] border-textColor_gray"
             >
-              <SignOutIcon />
+              <div className="w-10 h-10">
+                <SignOutIcon />
+              </div>
               <p>Log out</p>
             </button>
           </div>

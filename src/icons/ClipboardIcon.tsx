@@ -6,7 +6,7 @@ const ClipboardIcon = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.3}
       stroke="currentColor"
-      className="w-8 h-8"
+      className="w-full h-full"
     >
       <path
         strokeLinecap="round"

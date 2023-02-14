@@ -6,7 +6,7 @@ const SunIcon = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.3}
       stroke="currentColor"
-      className="w-9 h-9"
+      className="w-full h-full"
     >
       <path
         strokeLinecap="round"

@@ -3,8 +3,13 @@ import { useState } from 'react'
 import { useAddTask } from '../tasks/useAddTask'
 import AllTasksList from './AllTasksList'
 import { Toaster } from 'react-hot-toast'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../store/store'
+import allTasksIllustration from '../../illustrations/Product launch.png'
 
 const AllTasks = () => {
+  const tasks = useSelector((state: RootState) => state.tasks.tasks)
+
   const [inputValue, setInputValue] = useState('')
   const { addTask } = useAddTask(inputValue, setInputValue)
 
@@ -15,6 +20,20 @@ const AllTasks = () => {
       </h1>
 
       <div className="w-full h-4/5 border-[1.5px] border-textColor_lightGray mt-5 rounded-t-3xl  overflow-y-scroll no-scrollbar no-scrollbar::-webkit-scrollbar">
+        {tasks.length === 0 && (
+          <div className="w-5/6 xs:w-[30rem] mx-auto mt-32 flex flex-col justify-center items-center">
+            <img
+              src={allTasksIllustration}
+              alt="illustration of a girl sitting and holding cards"
+            />
+            <p className="text-[1.4rem] mt-4 text-black_main text-center">
+              What do you need to get done today?
+            </p>
+            <span className="text-[1.35rem] text-center">
+              Quickly add a task from here
+            </span>
+          </div>
+        )}
         <AllTasksList />
       </div>
 

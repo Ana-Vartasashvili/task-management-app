@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
 
   return (
     <div className="w-96 h-screen text-[1.5rem] text-gray  fixed top-0 left-0 bg-black_main px-7 flex flex-col justify-between">
-      <ul className="mt-20 flex flex-col gap-5 text-md">
+      <ul className="mt-20 flex flex-col gap-3 text-md">
         <li>
           <NavbarItem path="/tasks" currentPath={currentPath}>
             <div className="w-9 h-9">

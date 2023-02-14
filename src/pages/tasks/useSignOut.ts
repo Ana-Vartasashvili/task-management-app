@@ -9,7 +9,7 @@ export const useSignOut = () => {
   const signOut = () => {
     localStorage.removeItem('token')
     dispatch(addTasksData([]))
-    navigate('/')
+    navigate('/sign-in')
   }
 
   return { signOut }

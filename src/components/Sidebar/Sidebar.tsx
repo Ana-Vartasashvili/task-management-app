@@ -26,6 +26,7 @@ const Sidebar: React.FC<{ handleIsVisible: () => void }> = ({
               <Link
                 to="/tasks"
                 className="flex gap-5 items-center px-3 py-8 border-b-[1px] border-textColor_gray"
+                onClick={handleIsVisible}
               >
                 <div className="w-10 h-10">
                   <SunIcon />
@@ -37,6 +38,7 @@ const Sidebar: React.FC<{ handleIsVisible: () => void }> = ({
             <Link
               to="/tasks/all"
               className="flex gap-5 items-center px-3 py-8 border-b-[1px] border-textColor_gray"
+              onClick={handleIsVisible}
             >
               <div className="w-10 h-10">
                 <ClipboardIcon />

@@ -23,6 +23,7 @@ module.exports = {
       SignUp_card_color: '#252525',
       SignUp_card_font_color: '#f8fafc',
       gray: '#9398A7',
+      lightGray: '#C0C0C0',
       textColor_lightGray: '#e3e3e3',
       textColor_darkGray: '#44403c',
       textColor_gray: '#8c9283',

@@ -4,9 +4,9 @@ import { RootState } from '../../store/store'
 import tasksIllustration from '../../illustrations/No comments yet.png'
 
 const TasksList: React.FC = (props) => {
-  const tasks = useSelector((state: RootState) => state.tasks.tasks)
-    .filter((task) => task.completed !== true)
-    .reverse()
+  const tasks = useSelector((state: RootState) => state.tasks.tasks).filter(
+    (task) => task.completed !== true
+  )
 
   return (
     <div className="w-2/4 mx-auto pb-20">

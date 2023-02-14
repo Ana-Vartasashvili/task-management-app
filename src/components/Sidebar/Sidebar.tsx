@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import CalendarIcon from '../../icons/CalendarIcon'
 import ClipboardIcon from '../../icons/ClipboardIcon'
 import SunIcon from '../../icons/SunIcon'
 import SidebarItem from '../Sidebar/SidebarItem'
@@ -31,15 +30,6 @@ const Sidebar: React.FC = () => {
         </li>
 
         <li>
-          <Link to="/tasks/next-seven-days">
-            <SidebarItem>
-              <CalendarIcon />
-              <span>Next 7 days</span>
-            </SidebarItem>
-          </Link>
-        </li>
-
-        <li>
           <Link to="/tasks/all">
             <SidebarItem>
               <ClipboardIcon />
@@ -56,7 +46,7 @@ const Sidebar: React.FC = () => {
 
       <button
         onClick={signOut}
-        className="mb-10 flex items-center gap-5 border w-fit px-4 py-3 rounded-2xl border-main_purple hover:bg-dark_purple hover:text-white duration-300 ease-in-out"
+        className="mb-14 flex items-center gap-5 border w-fit px-4 py-3 rounded-2xl border-main_purple hover:bg-dark_purple hover:text-white duration-300 ease-in-out"
       >
         <SignOutIcon />
         <p>Log out</p>

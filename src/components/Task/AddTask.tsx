@@ -23,7 +23,7 @@ const AddTask: React.FC = () => {
           onClick={toggleAddTaskForm}
         >
           <PlusIcon />
-          <span className="text-[1.6rem]">Add task</span>
+          <span className="text-[1.8rem]">Add task</span>
         </button>
       )}
 

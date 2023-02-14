@@ -11,7 +11,7 @@ export const useUpdateTaskIsCompleted = () => {
       const response = await axios.put(
         `/todos/${id}`,
         {
-          completed: !isCompleted,
+          completed: isCompleted,
         },
         {
           headers: {

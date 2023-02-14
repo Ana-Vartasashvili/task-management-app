@@ -15,7 +15,7 @@ const AllTasksListItem: React.FC<AllTasksListItemPros> = ({
   const { deleteTask } = useDeleteTask(id)
 
   const updateIsCompleted = () => {
-    updateTaskIsCompleted(id, isCompleted)
+    updateTaskIsCompleted(id, !isCompleted)
   }
 
   return (

@@ -6,7 +6,7 @@ const DeleteIcon = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.4}
       stroke="currentColor"
-      className="w-7 h-7 hover:text-dark_purple transition-all duration-300 ease-in-out"
+      className="w-7 h-7 hover:text-dark_purple hover:scale-[115%] transition-all duration-300 ease-in-out"
     >
       <path
         strokeLinecap="round"

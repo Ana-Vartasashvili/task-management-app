@@ -5,7 +5,9 @@ const Card = () => {
   return (
     <div>
       <Sidebar />
-      <div className="ml-96 pt-24 h-screen">{<Outlet />}</div>
+      <div className="ml-96 pt-24 h-screen bg-white">
+        <Outlet />
+      </div>
     </div>
   )
 }

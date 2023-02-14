@@ -10,7 +10,7 @@ const SignUp: React.FC = () => {
 
   return (
     <AuthFormCard>
-      <div>
+      <div className="w-full">
         <h1 className="text-4xl font-bold text-center text-SignUp_card_font_color">
           Sign up
         </h1>
@@ -18,7 +18,7 @@ const SignUp: React.FC = () => {
         <ToastContainer />
         <form
           onSubmit={handleSubmit}
-          className="mt-7 m-auto flex flex-col items-center w-[32rem]  gap-6"
+          className="mt-7 m-auto flex flex-col items-center w-full min-w-[20rem]  gap-6"
         >
           <AuthFormInput
             id="first_name"
@@ -56,7 +56,7 @@ const SignUp: React.FC = () => {
           <button
             disabled={isSubmitting}
             type="submit"
-            className={`w-full bg-main_purple px-8 py-4 rounded-2xl text-white font-semibold hover:bg-dark_purple hover:transition duration-300 ease-in-out ${
+            className={`w-full bg-main_purple px-8 py-4 rounded-2xl text-white font-semibold hover:bg-dark_purple hover:transition duration-300 ease-in-out max-w-[38rem] ${
               isSubmitting && 'opacity-30 cursor-not-allowed'
             }`}
           >
@@ -64,7 +64,7 @@ const SignUp: React.FC = () => {
           </button>
         </form>
 
-        <p className="text-center mt-5 text-sm">
+        <p className="text-center mt-5 text-sm md:text-[1.5rem]">
           Already signed up?{' '}
           <Link to="/sign-in" className="underline">
             Sign in

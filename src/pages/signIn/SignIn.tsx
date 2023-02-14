@@ -17,7 +17,7 @@ const Login: React.FC = () => {
         <ToastContainer />
         <form
           onSubmit={handleSubmit}
-          className="mt-7 m-auto flex flex-col items-center w-full  gap-6"
+          className="mt-7 m-auto flex flex-col items-center w-full min-w-[20rem] gap-6"
         >
           <AuthFormInput
             id="email"
@@ -44,7 +44,7 @@ const Login: React.FC = () => {
           </button>
         </form>
 
-        <p className="text-center mt-5 text-sm lg:text-[1.5rem]">
+        <p className="text-center mt-5 text-sm md:text-[1.5rem]">
           Don't have an account?{' '}
           <Link to="/sign-up" className="underline">
             Sign up

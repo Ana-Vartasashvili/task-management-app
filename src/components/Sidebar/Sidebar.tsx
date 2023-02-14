@@ -6,6 +6,7 @@ import SignOutIcon from '../../icons/SignOutIcon'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store/store'
 import SidebarItem from './SidebarItem'
+import MenuIcon from '../../icons/MenuIcon'
 
 const Sidebar: React.FC = () => {
   const allTasks = useSelector((state: RootState) => state.tasks?.tasks)

@@ -3,20 +3,20 @@ import TaskListItem from './TaskListItem'
 import { RootState } from '../../store/store'
 import tasksIllustration from '../../illustrations/No comments yet.png'
 
-const TasksList: React.FC = (props) => {
+const TasksList: React.FC = () => {
   const tasks = useSelector((state: RootState) => state.tasks.tasks).filter(
     (task) => task.completed !== true
   )
 
   return (
-    <div className="w-2/4 mx-auto pb-20">
+    <div className="mx-auto pb-20 max-w-[70rem]">
       {tasks.length === 0 && (
-        <div className="w-[30rem] mx-auto mt-32 flex flex-col justify-center items-center">
+        <div className="w-5/6 xs:w-[30rem] mx-auto mt-32 flex flex-col justify-center items-center">
           <img
             src={tasksIllustration}
             alt="illustration of a girl sitting and holding cards"
           />
-          <p className="text-[1.4rem] mt-4 text-black_main text center">
+          <p className="text-[1.4rem] mt-4 text-black_main text-center">
             What do you need to get done today?
           </p>
           <span className="text-[1.35rem]">Click + to add a task</span>

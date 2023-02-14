@@ -16,10 +16,10 @@ const AddTask: React.FC = () => {
   }
 
   return (
-    <div className="mb-8">
+    <div className="mb-8 mt-14 max-w-[70rem] mx-auto">
       {!formIsShown && (
         <button
-          className="mx-auto w-2/4 flex justify-start items-center gap-3 text-lg hover:text-main_purple"
+          className="flex justify-start items-center gap-3 text-lg w-full hover:text-main_purple"
           onClick={toggleAddTaskForm}
         >
           <PlusIcon />
@@ -37,10 +37,10 @@ const AddTask: React.FC = () => {
             placeholder="Task name"
             value={currentInputValue}
             onChange={(e) => setCurrentInputValue(e.target.value)}
-            className="border-[1.5px] w-2/4 border-solid border-gray rounded-2xl p-4 mx-auto flex justify-center hover:border-main_purple focus:outline-none focus:border-main_purple"
+            className="border-[1.5px] w-full border-solid border-gray rounded-2xl p-4 mx-auto flex justify-center hover:border-main_purple focus:outline-none focus:border-main_purple"
           />
 
-          <div className="mx-auto flex justify-end gap-5 w-2/4">
+          <div className="mx-auto flex justify-end gap-5 w-full">
             <button
               onClick={toggleAddTaskForm}
               type="button"

@@ -5,7 +5,7 @@ const AuthFormInput: React.FC<AuthFormInputProps> = (props) => {
   const { values, errors, touched, handleBlur, handleChange } = formikFields
 
   return (
-    <div className="w-full h-20">
+    <div className="w-full h-20 max-w-[38rem]">
       <input
         type={type ? type : 'text'}
         id={id}
@@ -13,7 +13,7 @@ const AuthFormInput: React.FC<AuthFormInputProps> = (props) => {
         value={values?.[id]}
         onChange={handleChange}
         onBlur={handleBlur}
-        className={`outline-none w-full px-8 py-3 rounded-2xl border-[1.9px] border-white focus:border-main_purple focus:border-solid ${
+        className={`outline-none w-full px-8 py-3 rounded-2xl border-[1.9px] border-white focus:border-main_purple focus:border-solid sm:h-[4.4rem] ${
           errors[id] && touched[id] && '!border-red placeholder:opacity-70'
         }`}
       />

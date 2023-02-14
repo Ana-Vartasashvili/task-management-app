@@ -9,7 +9,7 @@ const Login: React.FC = () => {
 
   return (
     <AuthFormCard>
-      <div>
+      <div className="w-full">
         <h1 className="text-4xl font-bold text-center text-SignUp_card_font_color">
           Sign in
         </h1>
@@ -17,7 +17,7 @@ const Login: React.FC = () => {
         <ToastContainer />
         <form
           onSubmit={handleSubmit}
-          className="mt-7 m-auto flex flex-col items-center w-[32rem]  gap-6"
+          className="mt-7 m-auto flex flex-col items-center w-full  gap-6"
         >
           <AuthFormInput
             id="email"
@@ -36,7 +36,7 @@ const Login: React.FC = () => {
           <button
             disabled={isSubmitting}
             type="submit"
-            className={`w-full bg-main_purple px-8 py-4 rounded-2xl text-white font-semibold hover:bg-dark_purple hover:transition duration-300 ease-in-out ${
+            className={`w-full bg-main_purple px-8 py-4 rounded-2xl text-white font-semibold hover:bg-dark_purple hover:transition duration-300 ease-in-out max-w-[38rem] ${
               isSubmitting && 'opacity-30 cursor-not-allowed'
             }`}
           >
@@ -44,7 +44,7 @@ const Login: React.FC = () => {
           </button>
         </form>
 
-        <p className="text-center mt-5 text-sm">
+        <p className="text-center mt-5 text-sm lg:text-[1.5rem]">
           Don't have an account?{' '}
           <Link to="/sign-up" className="underline">
             Sign up

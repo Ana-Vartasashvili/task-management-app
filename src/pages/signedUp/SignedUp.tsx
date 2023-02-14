@@ -3,15 +3,15 @@ import signedUpIllustration from '../../illustrations/Success.png'
 
 const SignedUp = () => {
   return (
-    <div className="h-screen flex items-center justify-center">
+    <div className="h-screen flex items-center justify-center px-8">
       <div className="flex justify-center flex-col items-center ">
         <img
           src={signedUpIllustration}
           alt="simple illustration of boy sitting on a mountain"
-          className="w-[36rem]"
+          className="w-[38rem]"
         />
-        <h1 className="text-4xl text-darkBlue">All Done!</h1>
-        <p className="text-textColor_darkGray text-m">
+        <h1 className="text-4xl text-textColor_lightGray">All Done!</h1>
+        <p className="text-gray text-m">
           Go to{' '}
           <Link to="/sign-in" className="underline">
             sign in

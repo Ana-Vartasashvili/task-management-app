@@ -17,7 +17,7 @@ const TaskListItem: React.FC<TaskListItemProps> = ({
   const [taskIsCompleted, setTaskIsCompleted] = useState(false)
 
   const updateIsCompleted = () => {
-    updateTaskIsCompleted(id, isCompleted)
+    updateTaskIsCompleted(id, !isCompleted)
     setTaskIsCompleted(true)
   }
 

@@ -12,18 +12,17 @@ import Card from './components/Card/Card'
 import PageNotFound from './pages/pageNotFound/PageNotFound'
 
 const App = () => {
-  const { getTasks } = useGetTasks()
+  // const { getTasks } = useGetTasks()
 
-  useEffect(() => {
-    getTasks()
-  }, [])
+  // useEffect(() => {
+  //   getTasks()
+  // }, [])
 
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/tasks" element={<Card />}>
         <Route index element={<Tasks />} />
-        <Route path="next-seven-days" element={<WeekTasks />} />
         <Route path="all" element={<AllTasks />} />
       </Route>
       <Route path="/Sign-up" element={<SignUp />} />

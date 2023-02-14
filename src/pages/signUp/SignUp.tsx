@@ -1,9 +1,8 @@
-import { Link, Navigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import AuthFormInput from '../../components/AuthForm/AuthFormInput'
-import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 import AuthFormCard from '../../components/AuthForm/AuthFormCard'
 import { useSignUp } from './useSignUp'
+import { Toaster } from 'react-hot-toast'
 
 const SignUp: React.FC = () => {
   const { handleSubmit, formikFields, isSubmitting } = useSignUp()
@@ -15,7 +14,7 @@ const SignUp: React.FC = () => {
           Sign up
         </h1>
 
-        <ToastContainer />
+        <Toaster />
         <form
           onSubmit={handleSubmit}
           className="mt-7 m-auto flex flex-col items-center w-full min-w-[20rem]  gap-6"

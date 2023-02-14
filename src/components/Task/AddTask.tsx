@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import PlusIcon from '../../icons/PlusIcon'
 import { useAddTask } from '../../pages/tasks/useAddTask'
+import { Toaster } from 'react-hot-toast'
 
 const AddTask: React.FC = () => {
   const [formIsShown, setFormIsShown] = useState(false)
@@ -59,6 +60,8 @@ const AddTask: React.FC = () => {
             >
               Add task
             </button>
+
+            <Toaster />
           </div>
         </form>
       )}

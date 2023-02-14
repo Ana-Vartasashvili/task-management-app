@@ -6,6 +6,7 @@ import { useDeleteTask } from '../../pages/tasks/useDeleteTask'
 import { useUpdateTaskIsCompleted } from '../../pages/tasks/useUpdateTaskIsCompleted'
 import CheckMarkIcon from '../../icons/CheckMarkIcon'
 import { useState } from 'react'
+import { Toaster } from 'react-hot-toast'
 
 const TaskListItem: React.FC<TaskListItemProps> = ({
   id,
@@ -36,6 +37,8 @@ const TaskListItem: React.FC<TaskListItemProps> = ({
 
         <span className="text-text_black">{name}</span>
       </div>
+
+      <Toaster />
 
       <button onClick={deleteTask}>
         <div className="w-7 h-7">

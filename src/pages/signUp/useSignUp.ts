@@ -1,9 +1,9 @@
 import { useFormik } from 'formik'
 import { signUpSchema } from '../../schemas/signUpSchema'
-import { notify } from '../../helpers/notify'
 import { SignUpInputValues } from '../types'
 import axios from '../../services/axios'
 import { useNavigate } from 'react-router-dom'
+import toast from 'react-hot-toast'
 
 export const useSignUp = () => {
   const navigate = useNavigate()
@@ -17,9 +17,9 @@ export const useSignUp = () => {
       resetForm({ values: '' })
     } catch (error: any) {
       const errorMessage = error.response.data.message
-      console.log(error)
+
       if (errorMessage) {
-        notify(errorMessage)
+        toast.error(errorMessage)
       }
     }
   }

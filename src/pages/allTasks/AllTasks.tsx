@@ -2,6 +2,7 @@ import UpArrowIcon from '../../icons/UpArrowIcon'
 import { useState } from 'react'
 import { useAddTask } from '../tasks/useAddTask'
 import AllTasksList from './AllTasksList'
+import { Toaster } from 'react-hot-toast'
 
 const AllTasks = () => {
   const [inputValue, setInputValue] = useState('')
@@ -39,6 +40,7 @@ const AllTasks = () => {
           }`}
           type="submit"
         >
+          <Toaster />
           <UpArrowIcon />
         </button>
       </form>

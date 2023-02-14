@@ -1,10 +1,10 @@
 import { signInSchema } from '../../schemas/signInSchema'
 import axios from '../../services/axios'
 import { LoginInputValues } from '../types'
-import { notify } from '../../helpers/notify'
 import { useFormik } from 'formik'
 import { useNavigate } from 'react-router-dom'
 import { useGetTasks } from '../tasks/useGetTasks'
+import toast from 'react-hot-toast'
 
 export const useSignIn = () => {
   const navigate = useNavigate()
@@ -23,9 +23,7 @@ export const useSignIn = () => {
       const errorMessage = error.response.data.message
 
       if (errorMessage) {
-        notify(errorMessage)
-        setFieldError('email', 'Credentials are incorrect')
-        setFieldError('password', 'Credentials are incorrect')
+        toast.error(errorMessage)
       }
     }
   }

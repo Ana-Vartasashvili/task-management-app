@@ -3,6 +3,7 @@ import AuthFormInput from '../../components/AuthForm/AuthFormInput'
 import { ToastContainer } from 'react-toastify'
 import { useSignIn } from './useSignIn'
 import { Link } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast'
 
 const Login: React.FC = () => {
   const { handleSubmit, formikFields, isSubmitting } = useSignIn()
@@ -14,7 +15,7 @@ const Login: React.FC = () => {
           Sign in
         </h1>
 
-        <ToastContainer />
+        <Toaster />
         <form
           onSubmit={handleSubmit}
           className="mt-7 m-auto flex flex-col items-center w-full min-w-[20rem] gap-6"

@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux'
-import { notify } from '../../helpers/notify'
 import axios from '../../services/axios'
 import { addTasksData } from '../../store/tasksSlice'
+import toast from 'react-hot-toast'
 
 export const useUpdateTaskIsCompleted = () => {
   const dispatch = useDispatch()
@@ -22,9 +22,11 @@ export const useUpdateTaskIsCompleted = () => {
 
       dispatch(addTasksData(response.data.list.reverse()))
     } catch (error: any) {
-      const errorMessage = error.response.data
+      const errorMessage = error.response.data.message
 
-      errorMessage && notify(errorMessage)
+      if (errorMessage) {
+        toast.error(errorMessage)
+      }
     }
   }
 

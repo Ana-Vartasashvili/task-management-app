@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux'
 import axios from '../../services/axios'
 import { addTasksData } from '../../store/tasksSlice'
 import { notify } from '../../helpers/notify'
+import toast from 'react-hot-toast'
 
 export const useDeleteTask = (id: string) => {
   const dispatch = useDispatch()
@@ -16,9 +17,11 @@ export const useDeleteTask = (id: string) => {
 
       dispatch(addTasksData(response.data.list.reverse()))
     } catch (error: any) {
-      const errorMessage = error.response.data
+      const errorMessage = error.response.data.message
 
-      errorMessage && notify(errorMessage)
+      if (errorMessage) {
+        toast.error(errorMessage)
+      }
     }
   }
 

@@ -5,6 +5,7 @@ import { useUpdateTaskIsCompleted } from '../tasks/useUpdateTaskIsCompleted'
 import CheckCircleSolidIcon from '../../icons/CheckCircleSolidIcon'
 import XIcon from '../../icons/XIcon'
 import { useDeleteTask } from '../tasks/useDeleteTask'
+import { Toaster } from 'react-hot-toast'
 
 const AllTasksListItem: React.FC<AllTasksListItemPros> = ({
   taskName,
@@ -31,6 +32,7 @@ const AllTasksListItem: React.FC<AllTasksListItemPros> = ({
             )}
             {isCompleted && <CheckCircleSolidIcon />}
           </button>
+          <Toaster />
 
           <span
             className={`text-dark_gray ${

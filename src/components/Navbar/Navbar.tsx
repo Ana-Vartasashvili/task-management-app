@@ -37,9 +37,9 @@ const Navbar: React.FC = () => {
               <ClipboardIcon />
             </div>
             <span>All my tasks</span>
-            {uncompletedTasks.length > 0 && (
+            {allTasks.length > 0 && (
               <span className="absolute right-11 text-[1.15rem]">
-                {uncompletedTasks.length}
+                {allTasks.length}
               </span>
             )}
           </NavbarItem>

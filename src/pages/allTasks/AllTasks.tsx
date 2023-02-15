@@ -1,17 +1,25 @@
 import UpArrowIcon from '../../icons/UpArrowIcon'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useAddTask } from '../tasks/useAddTask'
 import AllTasksList from './AllTasksList'
 import { Toaster } from 'react-hot-toast'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store/store'
 import allTasksIllustration from '../../illustrations/Product launch.png'
+import { useGetTasks } from '../tasks/useGetTasks'
 
 const AllTasks = () => {
   const tasks = useSelector((state: RootState) => state.tasks.tasks)
+  const { isLoading } = useGetTasks()
 
   const [inputValue, setInputValue] = useState('')
   const { addTask } = useAddTask(inputValue, setInputValue)
+
+  const { getTasks } = useGetTasks()
+
+  useEffect(() => {
+    getTasks()
+  }, [])
 
   return (
     <div className="max-w-[70rem] h-full mx-auto">
@@ -20,7 +28,7 @@ const AllTasks = () => {
       </h1>
 
       <div className="w-full h-4/5 border-[1.5px] border-textColor_lightGray mt-5 rounded-t-3xl  overflow-y-scroll no-scrollbar no-scrollbar::-webkit-scrollbar">
-        {tasks.length === 0 && (
+        {tasks.length === 0 && !isLoading && (
           <div className="w-5/6 xs:w-[30rem] mx-auto mt-32 flex flex-col justify-center items-center">
             <img
               src={allTasksIllustration}

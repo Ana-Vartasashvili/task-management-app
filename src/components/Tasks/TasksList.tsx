@@ -2,15 +2,18 @@ import { useSelector } from 'react-redux'
 import TaskListItem from './TaskListItem'
 import { RootState } from '../../store/store'
 import tasksIllustration from '../../illustrations/No comments yet.png'
+import { useGetTasks } from '../../pages/tasks/useGetTasks'
+import { useUpdateTaskIsCompleted } from '../../pages/tasks/useUpdateTaskIsCompleted'
 
 const TasksList: React.FC = () => {
   const tasks = useSelector((state: RootState) => state.tasks.tasks).filter(
     (task) => task.completed !== true
   )
+  const { isLoading } = useGetTasks()
 
   return (
     <div className="mx-auto pb-20 max-w-[70rem]">
-      {tasks.length === 0 && (
+      {tasks.length === 0 && !isLoading && (
         <div className="w-5/6 xs:w-[30rem] mx-auto mt-32 flex flex-col justify-center items-center">
           <img
             src={tasksIllustration}

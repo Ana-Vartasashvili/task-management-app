@@ -5,6 +5,7 @@ import { useFormik } from 'formik'
 import { useNavigate } from 'react-router-dom'
 import { useGetTasks } from '../tasks/useGetTasks'
 import toast from 'react-hot-toast'
+import { registerUser } from '../../services/authServices'
 
 export const useSignIn = () => {
   const navigate = useNavigate()
@@ -12,7 +13,7 @@ export const useSignIn = () => {
 
   const onSubmit = async (values: LoginInputValues, { setFieldError }: any) => {
     try {
-      const response = await axios.post('/auth/sign-in', values)
+      const response = await registerUser(values)
 
       if (response.status === 200) {
         localStorage.setItem('token', response.data.accessToken)

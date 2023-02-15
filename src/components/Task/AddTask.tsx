@@ -53,7 +53,7 @@ const AddTask: React.FC = () => {
             <button
               onClick={addTask}
               type="submit"
-              disabled={inputIsEmpty}
+              disabled={inputIsEmpty || isLoading}
               className={`px-5 py-2 rounded-lg bg-main_purple hover:bg-dark_purple duration-300 ease-in-out text-white ${
                 (inputIsEmpty || isLoading) && 'opacity-50 cursor-not-allowed'
               }`}

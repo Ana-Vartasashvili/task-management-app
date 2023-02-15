@@ -8,4 +8,16 @@ const axiosInstance = axios.create({
   },
 })
 
+axiosInstance.interceptors.response.use(
+  function (response) {
+    return response
+  },
+  async (error) => {
+    if (error?.response?.status === 403) {
+      window.location.replace('/sign-in')
+      localStorage.removeItem('token')
+    } else return Promise.reject(error)
+  }
+)
+
 export default axiosInstance

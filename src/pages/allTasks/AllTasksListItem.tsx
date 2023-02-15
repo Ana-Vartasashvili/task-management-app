@@ -20,7 +20,7 @@ const AllTasksListItem: React.FC<AllTasksListItemPros> = ({
   }
 
   return (
-    <li className="px-6 py-4 rounded-2xl border-[1.5px] text-md border-textColor_lightGray flex justify-between items-center gap-4 group font-thin">
+    <li className="px-6 py-4 rounded-2xl border-[1.5px] text-md break-all border-textColor_lightGray flex justify-between items-center gap-4 group font-thin">
       <div className="flex w-full justify-between">
         <div className="flex items-center gap-4">
           <button onClick={updateIsCompleted}>

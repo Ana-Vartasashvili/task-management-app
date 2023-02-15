@@ -28,11 +28,16 @@ export const useAddTask = (
       setTaskName('')
       setIsLoading(false)
     } catch (error: any) {
-      const errorMessage = error.response.data.message
+      setIsLoading(false)
 
-      if (errorMessage) {
+      const errorData = error.response.data.errors[0]
+      const errorMessage = errorData.msg
+      const inputValue = errorData.value
+
+      if (error) {
         toast.error(errorMessage)
       }
+      setTaskName(inputValue)
     }
   }
 

@@ -10,6 +10,7 @@ export const useAddTask = (
 ) => {
   const dispatch = useDispatch()
   const [isLoading, setIsLoading] = useState(false)
+  const [errorMsg, setErrorMsg] = useState('')
 
   const addTask = async () => {
     try {
@@ -25,21 +26,24 @@ export const useAddTask = (
       )
 
       dispatch(addTasksData(response.data.list.reverse()))
+
       setTaskName('')
       setIsLoading(false)
+      setErrorMsg('')
     } catch (error: any) {
       setIsLoading(false)
-
       const errorData = error.response.data.errors[0]
       const errorMessage = errorData.msg
       const inputValue = errorData.value
 
-      if (error) {
+      if (error.response.status === 422) {
+        setErrorMsg(errorMessage)
+      } else if (error) {
         toast.error(errorMessage)
       }
       setTaskName(inputValue)
     }
   }
 
-  return { addTask, isLoading }
+  return { addTask, isLoading, errorMsg }
 }

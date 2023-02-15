@@ -10,10 +10,8 @@ import { useGetTasks } from '../tasks/useGetTasks'
 
 const AllTasks = () => {
   const tasks = useSelector((state: RootState) => state.tasks.tasks)
-  const { isLoading } = useGetTasks()
-
   const [inputValue, setInputValue] = useState('')
-  const { addTask } = useAddTask(inputValue, setInputValue)
+  const { addTask, isLoading } = useAddTask(inputValue, setInputValue)
 
   const { getTasks } = useGetTasks()
 
@@ -28,7 +26,7 @@ const AllTasks = () => {
       </h1>
 
       <div className="w-full h-4/5 border-[1.5px] border-textColor_lightGray mt-5 rounded-t-3xl  overflow-y-scroll no-scrollbar no-scrollbar::-webkit-scrollbar">
-        {tasks.length === 0 && !isLoading && (
+        {tasks.length === 0 && (
           <div className="w-5/6 xs:w-[30rem] mx-auto mt-32 flex flex-col justify-center items-center">
             <img
               src={allTasksIllustration}
@@ -60,9 +58,10 @@ const AllTasks = () => {
 
         <button
           onClick={addTask}
-          disabled={inputValue.trim().length === 0}
+          disabled={inputValue.trim().length === 0 || isLoading}
           className={`bg-dark_gray p-3 rounded-full hover:bg-dark_purple hover:text-white hover:scale-[105%] duration-300 ease-in-out ${
             inputValue.trim().length > 0 &&
+            !isLoading &&
             '!bg-main_purple hover:!bg-dark_purple text-white'
           }`}
           type="submit"

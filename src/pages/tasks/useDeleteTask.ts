@@ -1,7 +1,6 @@
 import { useDispatch } from 'react-redux'
 import axios from '../../services/axios'
 import { addTasksData } from '../../store/tasksSlice'
-import { notify } from '../../helpers/notify'
 import toast from 'react-hot-toast'
 
 export const useDeleteTask = (id: string) => {

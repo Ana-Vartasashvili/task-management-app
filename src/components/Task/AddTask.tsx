@@ -7,7 +7,7 @@ const AddTask: React.FC = () => {
   const [formIsShown, setFormIsShown] = useState(false)
   const [currentInputValue, setCurrentInputValue] = useState('')
   const inputIsEmpty = currentInputValue?.trim().length === 0
-  const { addTask, isLoading } = useAddTask(
+  const { addTask, isLoading, errorMsg } = useAddTask(
     currentInputValue,
     setCurrentInputValue
   )
@@ -31,15 +31,23 @@ const AddTask: React.FC = () => {
       {formIsShown && (
         <form
           onSubmit={(e) => e.preventDefault()}
-          className="flex justify-center flex-col gap-4 mx-auto text-[1.4rem]"
+          className="flex justify-center flex-col gap-4 mx-auto text-[1.4rem] relative"
         >
           <input
             type="text"
             placeholder="Task name"
             value={currentInputValue}
             onChange={(e) => setCurrentInputValue(e.target.value)}
-            className="border-[1.5px] w-full border-solid border-gray rounded-2xl p-4 mx-auto flex justify-center hover:border-main_purple focus:outline-none focus:border-main_purple"
+            className={`border-[1.5px] w-full border-solid border-gray rounded-2xl p-4 mx-auto flex justify-center hover:border-main_purple focus:outline-none focus:border-main_purple ${
+              errorMsg && currentInputValue.length < 4 && '!border-red'
+            }`}
           />
+
+          {errorMsg && currentInputValue.length < 4 && (
+            <span className="absolute text-[1.2rem] text-red top-[55%]">
+              {errorMsg}
+            </span>
+          )}
 
           <div className="mx-auto flex justify-end gap-5 w-full">
             <button

@@ -1,14 +1,21 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 import Navbar from '../Navbar/Navbar'
 import MenuIcon from '../../icons/MenuIcon'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Sidebar from '../Sidebar/Sidebar'
 
 const Card = () => {
+  const navigate = useNavigate()
   const [sidebarIsVisible, setSidebarIsVisible] = useState(false)
   const toggleNavbar = () => {
     setSidebarIsVisible((prevState) => !prevState)
   }
+
+  useEffect(() => {
+    if (!localStorage.getItem('token')) {
+      return navigate('/sign-in')
+    }
+  }, [])
 
   return (
     <div className="w-screen h-screen">

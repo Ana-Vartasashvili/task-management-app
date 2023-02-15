@@ -18,6 +18,7 @@ export const useGetTasks = () => {
       })
 
       dispatch(addTasksData(response.data.reverse()))
+
       setIsLoading(false)
     } catch (error: any) {
       setError(error.response.data.message)
@@ -29,5 +30,5 @@ export const useGetTasks = () => {
     }
   }
 
-  return { getTasks, isLoading }
+  return { getTasks }
 }

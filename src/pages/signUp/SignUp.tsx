@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import AuthFormInput from '../../components/authForm/AuthFormInput'
-import AuthFormCard from '../../components/authForm/AuthFormCard'
+import AuthFormInput from '../../components/AuthForm/AuthFormInput'
+import AuthFormCard from '../../components/AuthForm/AuthFormCard'
 import { useSignUp } from './useSignUp'
 import { Toaster } from 'react-hot-toast'
 

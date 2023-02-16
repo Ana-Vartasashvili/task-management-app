@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import AddTask from '../../components/Tasks/Task/AddTask'
+import AddTask from '../../components/Task/AddTask'
 import TasksList from '../../components/Tasks/TasksList'
 import { useGetTasks } from './useGetTasks'
 

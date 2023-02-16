@@ -1,5 +1,5 @@
-import AuthFormCard from '../../components/AuthForm/AuthFormCard'
-import AuthFormInput from '../../components/AuthForm/AuthFormInput'
+import AuthFormCard from '../../components/authForm/AuthFormCard'
+import AuthFormInput from '../../components/authForm/AuthFormInput'
 import { ToastContainer } from 'react-toastify'
 import { useSignIn } from './useSignIn'
 import { Link } from 'react-router-dom'

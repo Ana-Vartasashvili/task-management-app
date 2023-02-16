@@ -1,8 +1,8 @@
 import { Outlet, useNavigate } from 'react-router-dom'
-import Navbar from '../navbar/Navbar'
+import Navbar from '../Navbar/Navbar'
 import MenuIcon from '../../icons/MenuIcon'
 import { useState, useEffect } from 'react'
-import Sidebar from '../sidebar/Sidebar'
+import Sidebar from '../Sidebar/Sidebar'
 
 const Card = () => {
   const navigate = useNavigate()

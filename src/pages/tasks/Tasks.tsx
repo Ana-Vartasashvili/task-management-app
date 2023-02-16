@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
-import AddTask from '../../components/task/AddTask'
-import TasksList from '../../components/tasks/TasksList'
+import AddTask from '../../components/Task/AddTask'
+import TasksList from '../../components/Tasks/TasksList'
 import { useGetTasks } from './useGetTasks'
 
 const Home: React.FC = () => {

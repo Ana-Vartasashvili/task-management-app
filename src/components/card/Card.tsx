@@ -19,25 +19,23 @@ const Card = () => {
 
   return (
     <div className="w-full h-full bg-white">
-      <div className="w-full h-full">
-        {!sidebarIsVisible && (
-          <div
-            className="absolute top-6 right-8 mdl:hidden"
-            onClick={toggleNavbar}
-          >
-            <MenuIcon />
-          </div>
-        )}
-
-        {sidebarIsVisible && <Sidebar handleIsVisible={toggleNavbar} />}
-
-        <div className="hidden mdl:block absolute">
-          <Navbar />
+      {!sidebarIsVisible && (
+        <div
+          className="absolute top-6 right-8 mdl:hidden"
+          onClick={toggleNavbar}
+        >
+          <MenuIcon />
         </div>
+      )}
 
-        <div className="pt-24 h-full bg-white w-full px-10 xs:px-16 mdl:pl-[28rem] mdl:pr-[4rem]">
-          <Outlet />
-        </div>
+      {sidebarIsVisible && <Sidebar handleIsVisible={toggleNavbar} />}
+
+      <div className="hidden mdl:block absolute">
+        <Navbar />
+      </div>
+
+      <div className="pt-24 pb-20 h-screen overflow-y-auto bg-white w-full px-10 xs:px-16 mdl:pl-[28rem] mdl:pr-[4rem]">
+        <Outlet />
       </div>
     </div>
   )

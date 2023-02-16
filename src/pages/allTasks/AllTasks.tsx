@@ -20,8 +20,8 @@ const AllTasks = () => {
   }, [])
 
   return (
-    <div className="h-screen">
-      <div className="max-w-[70rem] h-5/6 mx-auto">
+    <div className="h-full">
+      <div className="max-w-[70rem] h-full mx-auto">
         <h1 className="font-semibold text-black_main text-[1.9rem]">
           All my tasks
         </h1>

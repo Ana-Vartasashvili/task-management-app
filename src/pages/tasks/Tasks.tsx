@@ -12,8 +12,10 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <AddTask />
-      <TasksList />
+      <div className="w-full h-full bg-white">
+        <AddTask />
+        <TasksList />
+      </div>
     </>
   )
 }

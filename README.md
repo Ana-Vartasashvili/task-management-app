@@ -93,61 +93,19 @@ Runs the app in the development mode. Open http://localhost:3000 to view it in y
 ├─── readme
 ├─── src
 │     ├── components
-│         ├── authForm
-│             ├── AuthFormCard.tsx
-│             └── AuthFormInput.tsx
-│         ├── card
-│             └── Card.tsx
-│         ├── navbar
-│             ├── Navbar.tsx
-│             ├── NavbarItem.tsx
-│             └── types.d.ts
-│         ├── sidebar
-│             └── Sidebar.tsx
-│         ├── task
-│             └── AddTask.tsx
-│         ├── tasks
-│             ├── TaskListItem.tsx
-│             ├── TasksList.tsx
-│             └── types.d.ts
+│     │    └── componentFolder
+│     │        ├── Component.tsx
+│     │        └── types.d.ts [#optional]
 │     ├── icons
 │     ├── illustrations
 │     ├── pages
-│         ├── allTasks
-│             ├── AllTasks.tsx
-│             ├── AllTasksList.tsx
-│             └── AllTasksListItem.tsx
-│         ├── home
-│             └── Home.tsx
-│         ├── pageNotFound
-│             └── PageNotFound.tsx
-│         ├── signedUp
-│             └── SignedUp.tsx
-│         ├── signIn
-│             ├── SignIn.tsx
-│             └── useSignIn.ts
-│         ├── signUp
-│             ├── SignUp.tsx
-│             └── useSignUp.ts
-│         ├── tasks
-│             ├── Tasks.tsx
-│             ├── useAddTask.ts
-│             ├── useDeleteTask.ts
-│             ├── useGetTasks.ts
-│             ├── useSignOut.ts
-│             └── useUpdateTaskIsCompleted.ts
-│         ├── types.d.ts
+│     │    ├── pageFolder
+│     │    │   └── Page.tsx
+│     │    └── types.d.ts
 │     ├── schemas
-│         ├── signInSchema.ts
-│         └── signUpSchema.ts
 │     ├── services
-│         ├── authServices.ts
-│         └── axios.ts
 │     ├── store
-│         ├── store.ts
-│         └── tasksSlice.ts
 │     ├── types
-│         └── global.d.ts
 │     ├── App.tsx
 │     ├── index.css
 │     ├── main.tsx

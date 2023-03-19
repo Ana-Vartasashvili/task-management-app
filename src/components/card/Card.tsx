@@ -21,7 +21,7 @@ const Card = () => {
     <div className="w-full h-full bg-white">
       {!sidebarIsVisible && (
         <div
-          className="absolute top-6 right-8 mdl:hidden"
+          className="absolute top-6 right-8 mdl:hidden cursor-pointer"
           onClick={toggleNavbar}
         >
           <MenuIcon />

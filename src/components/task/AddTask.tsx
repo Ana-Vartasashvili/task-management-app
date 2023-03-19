@@ -38,13 +38,13 @@ const AddTask: React.FC = () => {
             placeholder="Task name"
             value={currentInputValue}
             onChange={(e) => setCurrentInputValue(e.target.value)}
-            className={`border-[1.5px] w-full border-solid border-gray rounded-2xl p-4 mx-auto flex justify-center hover:border-main_purple focus:outline-none focus:border-main_purple ${
+            className={`border-[1.5px] w-full border-solid border-gray rounded-2xl p-4 mx-auto mb-6 xs:mb-0 flex justify-center hover:border-main_purple focus:outline-none focus:border-main_purple ${
               errorMsg && currentInputValue.length < 4 && '!border-red'
             }`}
           />
 
           {errorMsg && currentInputValue.length < 4 && (
-            <span className="absolute text-[1.2rem] text-red top-[55%]">
+            <span className="absolute text-[1.2rem] text-red top-[45%] xs:top-[55%]">
               {errorMsg}
             </span>
           )}

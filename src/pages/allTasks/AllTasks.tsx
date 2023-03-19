@@ -11,7 +11,7 @@ import { useGetTasks } from '../tasks/useGetTasks'
 const AllTasks = () => {
   const tasks = useSelector((state: RootState) => state.tasks.tasks)
   const [inputValue, setInputValue] = useState('')
-  const { addTask, isLoading } = useAddTask(inputValue, setInputValue)
+  const { addTask, isLoading, errorMsg } = useAddTask(inputValue, setInputValue)
 
   const { getTasks } = useGetTasks()
 
@@ -45,7 +45,7 @@ const AllTasks = () => {
         </div>
 
         <form
-          className="bg-black_main w-full bottom-0 left-0 rounded-b-3xl py-5 px-5 flex justify-between gap-4"
+          className="relative bg-black_main w-full bottom-0 left-0 rounded-b-3xl pb-9 pt-6 px-5 flex justify-between gap-4"
           onSubmit={(e) => e.preventDefault()}
         >
           <input
@@ -54,8 +54,19 @@ const AllTasks = () => {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             placeholder="Click to add a task"
-            className="bg-dark_gray text-[1.3rem] w-11/12 rounded-full placeholder-textColor_gray py-2 px-4 border-[1.5px] text-white border-dark_gray focus:outline-none hover:border-main_purple focus:border-main_purple"
+            className={`bg-dark_gray text-[1.3rem] w-11/12 rounded-full placeholder-textColor_gray py-2 px-4 border-[1.5px] text-white border-dark_gray focus:outline-none hover:border-main_purple focus:border-main_purple ${
+              inputValue.length !== 0 &&
+              errorMsg &&
+              inputValue.length < 4 &&
+              '!border-red'
+            }`}
           />
+
+          {errorMsg && inputValue.length < 4 && inputValue.length !== 0 && (
+            <span className="absolute text-[1.1rem] text-red top-[70%]">
+              {errorMsg}
+            </span>
+          )}
 
           <button
             onClick={addTask}

@@ -14,7 +14,7 @@ const Sidebar: React.FC<{ handleIsVisible: () => void }> = ({
     <div className="w-screen h-screen bg-black_main px-10 mdl:hidden">
       <div className="text-white">
         <div
-          className="w-14 h-14 absolute top-6 right-8"
+          className="w-14 h-14 absolute top-6 right-8 cursor-pointer"
           onClick={handleIsVisible}
         >
           <XIcon />
@@ -25,7 +25,7 @@ const Sidebar: React.FC<{ handleIsVisible: () => void }> = ({
             <div className="w-full">
               <Link
                 to="/tasks"
-                className="flex gap-5 items-center px-3 py-8 border-b-[1px] border-textColor_gray"
+                className="flex gap-5 items-center   px-3 py-8 border-b-[1px] border-textColor_gray hover:rounded-lg hover:bg-main_purple transition-all ease-in-out duration-300"
                 onClick={handleIsVisible}
               >
                 <div className="w-10 h-10">
@@ -37,7 +37,7 @@ const Sidebar: React.FC<{ handleIsVisible: () => void }> = ({
 
             <Link
               to="/tasks/all"
-              className="flex gap-5 items-center px-3 py-8 border-b-[1px] border-textColor_gray"
+              className="flex gap-5 items-center px-3 py-8  border-b-[1px] border-textColor_gray hover:rounded-lg hover:bg-main_purple transition-all ease-in-out duration-300"
               onClick={handleIsVisible}
             >
               <div className="w-10 h-10">
@@ -48,7 +48,7 @@ const Sidebar: React.FC<{ handleIsVisible: () => void }> = ({
 
             <button
               onClick={signOut}
-              className="flex items-center gap-5 px-3 py-8 border-b-[1px] border-textColor_gray"
+              className="flex items-center gap-5 px-3 py-8 border-b-[1px] border-textColor_gray hover:rounded-lg hover:bg-main_purple transition-all ease-in-out duration-300"
             >
               <div className="w-10 h-10">
                 <SignOutIcon />
